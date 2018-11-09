@@ -2,8 +2,8 @@
   "name": "zhilin/xuetuzhi",
   "version": "1.0.0",
   "description": "",
-  "main": "xuetuzhi.js",
-  "module":"xuetuzhi.js",
+  "main": "./cjs/index.js",
+  "module":"/esm/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
