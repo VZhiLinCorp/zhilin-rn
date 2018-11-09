@@ -7,7 +7,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/VZhiLinCorp/zhilin-rn.git"
+    "url": "git+https://github.com/VZhiLinCorp/zhilin-rn.git"
   },
 
   "files": [
