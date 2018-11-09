@@ -1,3 +1,3 @@
 
+export {default as ProgressCircle} from './ProgressCircle'
 
-export const type = 'main'
