@@ -15,8 +15,8 @@
     "es"
   ],
   "license": "MIT",
-  "main": "lib/index.native.js",
-  "module": "es/index.native.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "dependencies": {
   },
   "scripts": {
