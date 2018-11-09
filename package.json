@@ -1,0 +1,36 @@
+{
+  "name": "zhilin-rn",
+  "version": "0.0.1",
+  "description": "rn",
+  "keywords": [
+    "react native"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://www.vzhilin.com:3000/RDC/SAS-APP.git"
+  },
+
+  "files": [
+    "lib",
+    "es"
+  ],
+  "license": "MIT",
+  "main": "lib/index.native.js",
+  "module": "es/index.native.js",
+  "dependencies": {
+  },
+  "scripts": {
+  },
+  "lint-staged": {
+    "components/**/*.tsx": [
+      "npm run lint-staged:ts"
+    ],
+    "{tests,site,scripts,components}/**/*.{js,jsx}": [
+      "npm run lint-staged:es"
+    ]
+  },
+  "typings": "lib/index.native.d.ts",
+  "pre-commit": [
+    "lint-staged"
+  ]
+}
