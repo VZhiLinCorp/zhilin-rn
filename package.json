@@ -19,6 +19,8 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "dependencies": {
+    "react-dom": "^16.0.0",
+    "react-native": "~0.49.3"
   },
   "scripts": {
   },
