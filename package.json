@@ -12,7 +12,8 @@
 
   "files": [
     "lib",
-    "es"
+    "es",
+    "xuetuzhi"
   ],
   "license": "MIT",
   "main": "lib/index.js",
