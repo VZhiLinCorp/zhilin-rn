@@ -70,9 +70,9 @@ export default class FileListItem extends Component {
         const { props, cancel, download } = this
         const { routeName, file, FileIcon, color, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, DownloadUrl, FileId } = file
-        const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1),
+        const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
 
-        const fileUserId = FileId + userId;
+        const fileUserId = FileId + userId
         const target = files[fileUserId]
         let progress = 0
         let DownloadBtn = this.renderInitialIcon(progress, download(fileUserId, file, DownloadUrl, realExtension, myDownload, updateFile))
