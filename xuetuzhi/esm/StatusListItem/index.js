@@ -9,7 +9,7 @@ export default class Template extends React.Component {
    
     }
     render() {
-        const { bottom = [], status, title, onPress } = this.props;
+        const { bottomRows = [], status, title, onPress } = this.props;
         const textStyle = [colorInfoLight, fontSizeXs]
         return (
             <PaddingBox style={[bgWhite, pp_sm, pv_n, getBorder('b')]} onPress={onPress}>
@@ -18,11 +18,11 @@ export default class Template extends React.Component {
                     <StatusBadge text={status} />
                 </View>
                 {
-                    bottom.map(row => {
+                    bottomRows.map(r => {
                         return (
                             <View style={[row, spaceBtw, mt_xs]}>
                                 {
-                                    row.map(rowItem => {
+                                    r.map(rowItem => {
                                         return <Text style={textStyle}>{rowItem}</Text>
                                     })
                                 }
