@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Text, View} from 'react-native'
+import { Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { fontSizeN, getFlex, row, getBorder, fontSizeXs, alignItemsC, mp_xs, ml_xs, p_xs, COLOR_PRIMARY, COLOR_LIGHT, fontSizeSm } from "../../../styles";
 import { colorInfoLight } from "../../../styles";
@@ -15,41 +15,41 @@ export default class FileListItem extends Component {
         return (
             <Touch onPress={download} style={[p_xs]}>
                 <ProgressCircle progress={progress} size={20} showIcon icon={
-                    <Icon name='arrow-down' style={{ fontSize: 16, color: COLOR_LIGHT, marginTop: -1, marginLeft: -1 }} />
+                    <Icon name='arrow-down' color={COLOR_LIGHT} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
                 } color={COLOR_LIGHT} />
             </Touch>
         )
 
 
     }
-    renderDoneIcon(progress) {
+    renderDoneIcon(progress, color) {
         return <Touch style={[p_xs]}>
             <ProgressCircle progress={progress} size={20} thickness={0} showIcon icon={
-                <Icon name='check' style={{ fontSize: 16, color: COLOR_PRIMARY, marginTop: -1, marginLeft: -1 }} />
-            } color={COLOR_PRIMARY} />
+                <Icon name='check' color={color} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
+            } color={color} />
         </Touch>
     }
-    static renderCancelIcon(progress, fn) {
+    static renderCancelIcon(progress, fn, color) {
         return (
             <Touch onPress={fn} style={[p_xs]}>
                 <ProgressCircle progress={progress} size={20} showIcon icon={
-                    <View style={{ width: 5, height: 5, backgroundColor: COLOR_PRIMARY }}></View>
-                } color={COLOR_PRIMARY} />
+                    <View style={{ width: 5, height: 5, backgroundColor: color }}></View>
+                } color={color} />
             </Touch>
         )
 
     }
     render() {
-        const { onPress, file, cancel, download, downloadStatus, progress, FileIcon } = this.props
+        const { onPress, file, cancel, download, downloadStatus, progress, FileIcon, color } = this.props
         const { FileExtension, fileName, FileSizeString } = file
 
         let DownloadBtn = ''
         if (downloadStatus === 'initial') {
             DownloadBtn = this.renderInitialIcon(progress, download)
         } else if (downloadStatus === 'done') {
-            DownloadBtn = this.renderDoneIcon(progress)
+            DownloadBtn = this.renderDoneIcon(progress, color)
         } else {
-            DownloadBtn = FileListItem.renderCancelIcon(progress, cancel)
+            DownloadBtn = FileListItem.renderCancelIcon(progress, cancel, color)
         }
 
         return (
