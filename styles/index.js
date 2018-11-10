@@ -8,6 +8,7 @@ export * from './constant'
 export * from './icon'
 export * from './common'
 export * from './fn'
+export * from './color'
 
 export const statusHeight = (Platform.OS === 'android') ? StatusBar.currentHeight : 25;
 export const screenW = Dimensions.get("window").width;
