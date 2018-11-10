@@ -11,6 +11,33 @@ export default class FileListItem extends Component {
 
     }
 
+    download(fileUserId, file, DownloadUrl, realExtension, myDownload, updateFile) {
+        return () => {
+            const task = myDownload(DownloadUrl, realExtension, updateFile)
+            updateFile({ id: fileUserId, task, ...file })
+            task.progress((received, total) => {
+                updateFile({ id: fileUserId, received, total })
+            }).then((resp) => {
+
+                console.log('====================================');
+                const path = resp.data
+                updateFile({ id: fileUserId, path, ...file })
+                console.log('====================================');
+
+            }).catch((err) => {
+                debugger
+            })
+        }
+    }
+
+    cancel(fileUserId, downloadTasks, removeFile) {
+        return () => {
+            const task = downloadTasks[fileUserId]
+            task && task.cancel((err) => {
+                removeFile([fileUserId])
+            })
+        }
+    }
     renderInitialIcon(progress, download) {
         return (
             <Touch onPress={download} style={[p_xs]}>
@@ -40,24 +67,43 @@ export default class FileListItem extends Component {
 
     }
     render() {
-        const { onPress, file, cancel, download, downloadStatus, progress, FileIcon, color } = this.props
-        const { FileExtension, fileName, FileSizeString } = file
+        const { props, cancel, download } = this
+        const { routeName, file, FileIcon, color, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
+        const { FileExtension, FileNameWithoutExt, FileSizeString, DownloadUrl, FileId } = file
+        const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1),
 
-        let DownloadBtn = ''
-        if (downloadStatus === 'initial') {
-            DownloadBtn = this.renderInitialIcon(progress, download)
-        } else if (downloadStatus === 'done') {
-            DownloadBtn = this.renderDoneIcon(progress, color)
-        } else {
-            DownloadBtn = FileListItem.renderCancelIcon(progress, cancel, color)
+        const fileUserId = FileId + userId;
+        const target = files[fileUserId]
+        let progress = 0
+        let DownloadBtn = this.renderInitialIcon(progress, download(fileUserId, file, DownloadUrl, realExtension, myDownload, updateFile))
+        let openUrl = DownloadUrl
+        //文件存在
+        if (target && (target.userId === userId)) {
+            const { received, total, path, id } = target
+            progress = (received / total) || 0
+            if (path) {
+                //已经下载完成
+                openUrl = target.path
+                DownloadBtn = this.renderDoneIcon(progress, color)
+            } else {
+                //下载中
+                DownloadBtn = FileListItem.renderCancelIcon(progress, cancel(fileUserId, downloadTasks, removeFile), color)
+            }
         }
+        const onPress = () => {
+            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, FileNameWithoutExt } })
+        }
+
+
+
+
 
         return (
             <PaddingBox onPress={onPress} style={[getBorder('b')]}>
                 <View style={[row, getFlex(1), alignItemsC]} >
                     <FileIcon type={FileExtension} />
                     <View style={[getFlex(1), mp_xs]}>
-                        <Text style={[fontSizeN]} numberOfLines={1}>{fileName}</Text>
+                        <Text style={[fontSizeN]} numberOfLines={1}>{FileNameWithoutExt}</Text>
                         <View style={[row, alignItemsC]}>
                             <Icon name="database" style={[fontSizeSm, colorInfoLight]} />
                             <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>{FileSizeString}</Text>
