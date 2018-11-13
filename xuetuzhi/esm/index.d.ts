@@ -6,4 +6,5 @@ export {default as FileItem} from './FileItem'
 export {default as StatusBadge} from './StatusBadge'
 export {default as StatusListItem} from './StatusListItem'
 export {default as TitleCard} from './titleCard'
+export {default as InfoBlock} from './InfoBlock'
 
