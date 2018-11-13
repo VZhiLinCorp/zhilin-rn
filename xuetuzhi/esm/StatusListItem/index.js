@@ -16,7 +16,7 @@ export default class Template extends React.Component {
                 <View style={[row, spaceBtw, { alignItems: 'flex-start' }]}>
                     <Text style={[listItemTitle, getFlex(1)]} numberOfLines={1}>{title}</Text>
                     {
-                        renderStatus ? renderStatus() : <StatusBadge text={status} />
+                        renderStatus ? renderStatus() : (status && <StatusBadge text={status} />)
                     }
                 </View>
                 {
