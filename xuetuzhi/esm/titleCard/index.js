@@ -4,7 +4,7 @@ import { View, Text, Card, CardItem, Right } from 'native-base'
 import { bgWhite, colorInfo, bgPrimary, alignItemsC, spaceBtw, row, getFlex, bold, getMorP, fontSizeN, fontSizeSm, ml_sm } from '../../../styles';
 
 
-export class TitleCard extends React.Component {
+export default class TitleCard extends React.Component {
     constructor() {
         super(...arguments)
         this.state = {
