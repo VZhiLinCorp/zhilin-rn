@@ -10,9 +10,9 @@ export const bgSuccess = getBgColor(COLOR_SUCCESS)//绿色
 export const bgDanger = getBgColor(COLOR_DANGER)//红色
 export const bgSafe = getBgColor(COLOR_SAFE)//蓝色
 export const bgWhite = getBgColor(COLOR_WHITE)//白色
-export const bgBlue=getBgColor(COLOR_BLUE)//淡蓝色
-export const bgGreen=getBgColor(COLOR_GREEN)//浅绿色
-export const bgOrange=getBgColor(COLOR_ORANGE)//桔色
+export const bgBlue = getBgColor(COLOR_BLUE)//淡蓝色
+export const bgGreen = getBgColor(COLOR_GREEN)//浅绿色
+export const bgOrange = getBgColor(COLOR_ORANGE)//桔色
 
 export const bgSub = getBgColor(COLOR_SUB) //辅助色 灰
 
@@ -38,30 +38,32 @@ export const colerPlaceHolder = getColor(COLOR_PLACEHOLDER)//
 
 export const bgGray = getBgColor(BG_GRAY)//背景色
 export const bgBlockGray = getBgColor(BLOCK_GRAY)//块灰色
+//颜色
+const statusColors = {
+    '未通过': colorDanger,
+    '迟到': colorDanger,
+    '未签退': colorDanger,
 
+    '进行中': colorSafe,
+}
+//背景
+const statusBg = {
+    '待评价': bgWarning,
+    '评分中': bgWarning,
+
+    '进行中中': bgSafe,
+    '已通过': bgSafe,
+
+    '未通过': bgDanger,
+
+    '结束': bgSub,
+}
 export const getStupidColor = (str) => {
     str = str || ''
-    if (str.includes('中')) {
-        return colorSafe
-    }
-    if (str.includes('未')) {
-        return colorDanger
-    }
-    return {}
+    return statusColors[str] || colorPrimary
+
 }
 export const getStupidBg = (str) => {
     str = str || ''
-    if (str.includes('待')|| str.includes('评分中')) {
-        return bgWarning
-    }
-    if (str.includes('中') || str.includes('已通过')) {
-        return bgSafe
-    }
-    if (str.includes('未')) {
-        return bgDanger
-    } 
-    if (str.includes('结束')) {
-        return bgSub
-    }
-    return bgPrimary
+    return statusBg[str] || bgPrimary
 }
