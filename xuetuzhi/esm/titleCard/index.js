@@ -11,6 +11,9 @@ export class TitleCard extends React.Component {
 
         }
     }
+    static defaultProps = {
+        right: ''
+    }
     render() {
         const { title, children, right } = this.props
         return (
@@ -33,4 +36,3 @@ export class TitleCard extends React.Component {
         )
     }
 }
- 
