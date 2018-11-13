@@ -63,5 +63,5 @@ export const getStupidBg = (str) => {
     if (str.includes('结束')) {
         return bgSub
     }
-    return {}
+    return bgPrimary
 }
