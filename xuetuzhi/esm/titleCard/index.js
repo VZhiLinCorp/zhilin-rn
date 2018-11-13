@@ -15,7 +15,7 @@ export default class TitleCard extends React.Component {
         right: ''
     }
     render() {
-        const { title, children, right } = this.props
+        const { title, children, right,renderRight } = this.props
         return (
             <Card style={[bgWhite]}>
                 <CardItem header bordered style={[getMorP(1, 0, 'l')]}>
@@ -23,7 +23,9 @@ export default class TitleCard extends React.Component {
                     </View>
                     <View style={[row, alignItemsC, spaceBtw, getFlex(1), ml_sm]}>
                         <Text style={[bold, fontSizeN, getFlex()]} numberOfLines={1}>{title || '标题为空'}</Text>
-                        <Text style={[fontSizeSm, colorInfo,]}>{right}</Text>
+                        {
+                            renderRight?renderRight():<Text style={[fontSizeSm, colorInfo,]}>{right}</Text>
+                        }
                     </View>
                 </CardItem>
                 <CardItem header>

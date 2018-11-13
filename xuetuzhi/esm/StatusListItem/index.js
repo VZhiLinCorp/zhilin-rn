@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import { bgWhite, fontSizeXs, listItemTitle, getFlex, row, pp_sm, spaceBtw, mt_xs, getBorder, pv_n, colorInfoLight } from '../../../styles';
 
 import { StatusBadge, PaddingBox } from '../index';
-export default class Template extends React.Component {
+export default class StatusListItem extends React.Component {
     constructor() {
         super(...arguments);
 

@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import { fontSizeXs, row, spaceBtw, mt_xs, bgPrimary, colorWhite, getFontWeight } from '../../../styles';
 
 import { StatusBadge, PaddingBox } from '../index';
-export default class Template extends React.Component {
+export default class InfoBlock extends React.Component {
     constructor() {
         super(...arguments);
 
