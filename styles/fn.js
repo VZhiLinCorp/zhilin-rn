@@ -37,7 +37,7 @@ export function getMorP(p, n, d) {
     return data
 }
 
-export const getBorder = (d = 'trbl', c = '#d3d8dd', w = .5) => {
+export const getBorder = (d = 'trbl', c = '#d3d8dd', w = .3) => {
     let prefix = 'border'
     let data = {}
     let _directions = d.split('')
