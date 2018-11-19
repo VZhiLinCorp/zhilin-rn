@@ -20,12 +20,12 @@ export default class StatusListItem extends React.Component {
                     }
                 </View>
                 {
-                    bottomRows.map(r => {
+                    bottomRows.map((r,rIndex) => {
                         return (
-                            <View style={[row, spaceBtw, mt_xs]}>
+                            <View style={[row, spaceBtw, mt_xs]} key={rIndex}>
                                 {
-                                    r.map(rowItem => {
-                                        return <Text style={textStyle}>{rowItem}</Text>
+                                    r.map((c,cIndex) => {
+                                        return <Text style={textStyle} key={cIndex}>{c}</Text>
                                     })
                                 }
                             </View>
