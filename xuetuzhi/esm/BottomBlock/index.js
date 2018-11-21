@@ -2,8 +2,8 @@
 
 import React, { PureComponent } from 'react'
 import { Tab, Tabs, View, Text, } from 'native-base'
-import Touch from './Touch'
-import PaddingBox from './PaddingBox'
+import Touch from '../Touch'
+import PaddingBox from '../PaddingBox'
 
 import { bgWhite, bgPrimary, colorWhite, p_sm, getWidth, getHeight, center, fontSizeMd, getBorder, getRadius } from '../../../styles';
 export default class BottomBlock extends PureComponent {
