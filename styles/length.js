@@ -54,6 +54,8 @@ export const pl_sm = getMorP(1, 10, 'l')
 export const pl_xs = getMorP(1, 5, 'l')
 export const pl_md = getMorP(1, 20, 'l')
 
+
+
 export const pr_sm = getMorP(1, 10, 'r')
 
 
@@ -66,9 +68,10 @@ export const pp_md = getMorP(1, 20, 'lr')
 export const pp_sm = getMorP(1, 10, 'lr')
 export const pp_xs = getMorP(1, 5, 'lr')
 
+
+
 export const pv_md = getMorP(1, 20, 'tb')
 export const pv_n = getMorP(1, 15, 'tb')
-
 export const pv_sm = getMorP(1, 10, 'tb')
 export const pv_xs = getMorP(1, 5, 'tb')
 
