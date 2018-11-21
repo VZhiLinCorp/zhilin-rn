@@ -13,7 +13,7 @@ export default class BottomBlock extends PureComponent {
 
 
     render() {
-        const { onPress = () => { }, title = '', renderContent, style } = this.props
+        const { onPress = () => { }, title = '', renderContent, style = [] } = this.props
         return (
             <PaddingBox style={[bgWhite, getWidth(), getBorder('t'), { position: 'absolute', bottom: 0 }, ...style]}>
                 {renderContent ? renderContent() :
