@@ -32,7 +32,7 @@ export const colorSafe = getColor(COLOR_SAFE)//蓝色
 export const colorWhite = getColor(COLOR_WHITE)//白色
 export const colorWarning = getColor(COLOR_WARNING)//白色
 export const colerPlaceHolder = getColor(COLOR_PLACEHOLDER)//
-export const colerIconText = getColor(COLOR_ICON_TEXT)//图标文字颜色
+export const colorIconText = getColor(COLOR_ICON_TEXT)//图标文字颜色
 
 
 //颜色
