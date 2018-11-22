@@ -9,10 +9,10 @@ export default class InfoBlock extends React.Component {
 
     }
     render() {
-        const { rows = [], style = [] } = this.props;
+        const { rows = [], style = [], onPress } = this.props;
         const textStyle = [colorWhite, fontSizeXs, getFontWeight('800')]
         return (
-            <PaddingBox style={[bgPrimary, ...style]} >
+            <PaddingBox style={[bgPrimary, ...style]} onPress={onPress} >
 
                 {
                     rows.map((r, index) => {
