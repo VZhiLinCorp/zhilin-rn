@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 
 import { pp_xs, jc_c, getMorP, getRadius, getStupidBg, colorWhite } from '../../../styles';
-export default class MyBadge extends React.PureComponent {
+export default class StatusBadge extends React.PureComponent {
   constructor() {
     super(...arguments)
   }

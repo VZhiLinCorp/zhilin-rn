@@ -75,6 +75,9 @@ export const COLOR_SAFE = '#6af'
 export const COLOR_SUCCESS = '#5cb85c'
 export const COLOR_DANGER = '#ff6028'
 export const COLOR_WARNING = '#febb49'
+
+export const COLOR_ICON_TEXT = '#5E6C92'
+
 export const COLOR_DARK = '#000'
 export const COLOR_WHITE = '#fff'
 export const COLOR_BLUE = '#5FB8F1'

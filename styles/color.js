@@ -19,7 +19,8 @@ export const bgSub = getBgColor(COLOR_SUB) //辅助色 灰
 export const bgInfo = getBgColor(COLOR_INFO) //灰色
 export const bgInfoLight = getBgColor(COLOR_LIGHT)//浅灰色
 export const bgBlack = getBgColor(COLOR_BLACK)//黑色
-
+export const bgGray = getBgColor(BG_GRAY)//背景色
+export const bgBlockGray = getBgColor(BLOCK_GRAY)//块灰色
 
 export const colorPrimary = getColor(COLOR_PRIMARY)//主题色
 export const colorPlaceholder = getColor(COLOR_PLACEHOLDER)//白色
@@ -36,8 +37,7 @@ export const colorWhite = getColor(COLOR_WHITE)//白色
 export const colorWarning = getColor(COLOR_WARNING)//白色
 export const colerPlaceHolder = getColor(COLOR_PLACEHOLDER)//
 
-export const bgGray = getBgColor(BG_GRAY)//背景色
-export const bgBlockGray = getBgColor(BLOCK_GRAY)//块灰色
+
 //颜色
 const statusColors = {
     '未通过': colorDanger,
