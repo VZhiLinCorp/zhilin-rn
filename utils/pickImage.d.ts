@@ -11,4 +11,4 @@ interface opt {
     quality: Number,
 }
 
-export function pickImage(onStart: Function, onError: Function, onSuccess: Function, options: opt): Void
+export function pickImage(onStart: Function, onError: Function, onSuccess: Function, options: opt): void
