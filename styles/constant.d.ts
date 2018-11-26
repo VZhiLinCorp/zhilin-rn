@@ -67,7 +67,8 @@ import { px2dp } from './fn';
 
 
 /****************颜色****************/
-export const COLOR_PRIMARY = '#5FB8F1'
+import theme from '../theme'
+export const COLOR_PRIMARY = theme.primaryColor
 export const COLOR_PRIMARY_SUB = '#19a899'
 export const COLOR_PRIMARY_LIGHT = '#e5f2f1'
 
@@ -91,7 +92,7 @@ export const COLOR_SUB = '#cfdbda'
 export const COLOR_PRESS = '#eee'
 export const COLOR_PLACEHOLDER = '#ccc'
 export const BORDER_COLOR = '#e5e8eb'
- 
+
 // export const BORDER_COLOR_LIGHT = '#ccc'
 
 export const androidStatusBarColor = '#000'
