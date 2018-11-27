@@ -68,7 +68,7 @@ export default class FileListItem extends Component {
     }
     render() {
         const { props, cancel, download } = this
-        const { routeName, file, FileIcon, color, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
+        const { routeName, file, FileIcon, color = COLOR_PRIMARY, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, DownloadUrl, FileId } = file
         const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
 
