@@ -23,9 +23,6 @@ export const heightMd = getHeight(36)
 export const heightBig = getHeight(40)
 
 //margin p:水平 v:垂直 lrtb:分别对应 left right top bottom
-export const m_0 = getMorP(0, 0, 'lrtb')
-
-
 export const m_sm = getMorP(0, 10, 'trbl')
 export const m_xs = getMorP(0, 5, 'trbl')
 
@@ -51,16 +48,11 @@ export const mb_md = getMorP(0, 20, 'b')
 
 
 // padding
-export const p_0 = getMorP(1, 0, 'lrtb')
-
-
 export const p_n = getMorP(1, 15, 'lrtb')
 
 export const pl_sm = getMorP(1, 10, 'l')
 export const pl_xs = getMorP(1, 5, 'l')
 export const pl_md = getMorP(1, 20, 'l')
-
-
 
 export const pr_sm = getMorP(1, 10, 'r')
 
@@ -74,10 +66,9 @@ export const pp_md = getMorP(1, 20, 'lr')
 export const pp_sm = getMorP(1, 10, 'lr')
 export const pp_xs = getMorP(1, 5, 'lr')
 
-
-
 export const pv_md = getMorP(1, 20, 'tb')
 export const pv_n = getMorP(1, 15, 'tb')
+
 export const pv_sm = getMorP(1, 10, 'tb')
 export const pv_xs = getMorP(1, 5, 'tb')
 
