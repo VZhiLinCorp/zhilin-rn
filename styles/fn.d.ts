@@ -23,15 +23,14 @@ const directions = {
 
 
 
-export function getMorP(p, n, d) {
+export function getMorP(p, n, d = 'trbl') {
     let data = {}
     const prefixs = ['margin', 'padding']
     const prefix = prefixs[p]
 
     let _directions = d.split('')
     _directions.forEach(d => {
-        let direction = directions[d]
-        data[prefix + direction] = n
+        data[prefix + direction] = directions[d]
     })
 
     return data
