@@ -10,6 +10,7 @@ export {default as InfoBlock} from './InfoBlock'
 export {default as Stars} from './Stars'
 export {default as BottomBlock} from './BottomBlock'
 export {default as Add} from './Add'
+export {default as MyHeader} from './MyHeader'
 
 
 
