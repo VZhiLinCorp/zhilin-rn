@@ -71,4 +71,5 @@ export const statusbarIsHidden = false
 export const statusbarBgColor = '#fff'
 export const statusbarIsTranslucent = isAndroid ? false : true
 export const statusbarFontStyle = 'dark-content';
-export const headerHeight = isAndroid ? getHeight(40) : {}
+export const headerHeight = isAndroid ? (getHeight(40) + StatusBar.currentHeight) : {}
+export const headerPadding = isAndroid ? { paddingTop: StatusBar.currentHeight } : {}
