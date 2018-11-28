@@ -100,7 +100,7 @@ export const getFontWeight = fontWeight => ({
     fontWeight
 })
 
-export const getShadow = (width, height, shadowOpacity = .1) => ({
+export const getShadow = (width, height, shadowOpacity = .33) => ({
     shadowOffset: { width, height }, shadowColor: 'black', shadowOpacity
 })
 
