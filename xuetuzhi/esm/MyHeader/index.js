@@ -3,6 +3,7 @@ import { View, Text, Header,  Button, Icon, Title } from 'native-base'
 import { NavigationActions, withNavigation } from 'react-navigation'
 import { bgWhite, colorPrimary, center, px2dp, getBorder, headerHeight, getFlex, alignItemsC, COLOR_INFO, fontSizeMd, COLOR_BLACK, row, bgDanger, jc_c, spaceBtw, flexEnd } from 'zhilin-rn/styles';
 import { isAndroid } from '../../../utils';
+import { m_0 } from '../../../styles';
 @withNavigation
 export default class MyHeader extends React.Component {
     constructor() {
@@ -22,7 +23,7 @@ export default class MyHeader extends React.Component {
                     (route || showLeft) &&
                     <Button transparent style={[getFlex(1), { marginLeft: isAndroid ? px2dp(-5) : 0, paddingLeft: 0 }]} onPress={this._nav} dark>
                         {
-                            showLeftIcon && <Icon type="Entypo" name="chevron-thin-left" />
+                            showLeftIcon && <Icon type="Entypo" name="chevron-thin-left" style={[m_0]}/>
                         }
                         {
                             leftText && <Text style={colorPrimary}>{leftText}</Text>
