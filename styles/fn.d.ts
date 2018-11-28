@@ -30,13 +30,13 @@ export function getMorP(p, n, d = 'trbl') {
 
     let _directions = d.split('')
     _directions.forEach(d => {
-        data[prefix + direction] = directions[d]
+        data[prefix + directions[d]] = n
     })
 
     return data
 }
 
-export const getBorder = (d = 'trbl', c = '#d3d8dd', w = .5) => {
+export const getBorder = (d = 'trbl', c = '#d3d8dd', w = .33) => {
     let prefix = 'border'
     let data = {}
     let _directions = d.split('')

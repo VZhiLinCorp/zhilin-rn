@@ -1,6 +1,7 @@
 import { PixelRatio } from "react-native";
 import { isNumber } from 'lodash'
-import { isAndroid,screenW } from "../utils";
+import { isAndroid } from "../utils";
+import { screenW } from ".";
 const fontSizeScaler = isAndroid ? (1 / PixelRatio.getFontScale()) : 1
 export const px2dp = px => PixelRatio.roundToNearestPixel(px);
 
@@ -22,15 +23,14 @@ const directions = {
 
 
 
-export function getMorP(p, n, d) {
+export function getMorP(p, n, d = 'trbl') {
     let data = {}
     const prefixs = ['margin', 'padding']
     const prefix = prefixs[p]
 
     let _directions = d.split('')
     _directions.forEach(d => {
-        let direction = directions[d]
-        data[prefix + direction] = n
+        data[prefix + directions[d]] = n
     })
 
     return data
