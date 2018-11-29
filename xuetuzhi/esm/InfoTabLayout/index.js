@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Tab, Tabs, View, Text, } from 'native-base'
-import { pp_sm, pv_n, px2dp, getFlex, bgPrimary, bgBlack } from '../../../styles';
+import { pp_sm, pv_n, px2dp, getFlex, bgPrimary, bgBlack, colorWhite } from '../../../styles';
 import { default as InfoBlock } from '../InfoBlock';
 export class InfoTabLayout extends Component {
     constructor() {
@@ -9,10 +9,10 @@ export class InfoTabLayout extends Component {
 
 
     render() {
-        const { contentTabs, rows, bg = bgPrimary } = this.props
+        const { contentTabs, rows, bg = bgPrimary, color = colorWhite } = this.props
         return (
             <View style={[getFlex()]}>
-                <InfoBlock rows={rows} bg={bg} />
+                <InfoBlock rows={rows} bg={bg} color={color} />
                 <Tabs initialPage={0} tabBarUnderlineStyle={{ height: px2dp(1.5) }}>
                     {
                         Object.entries(contentTabs).map((i, index) => {
