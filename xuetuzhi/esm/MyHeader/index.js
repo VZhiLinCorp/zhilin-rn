@@ -4,6 +4,7 @@ import { NavigationActions, withNavigation } from 'react-navigation'
 import { bgWhite, colorPrimary, center, px2dp, getBorder, headerHeight, getFlex, alignItemsC, COLOR_INFO, fontSizeMd, COLOR_BLACK, row, bgDanger, jc_c, spaceBtw, flexEnd } from 'zhilin-rn/styles';
 import { isAndroid } from '../../../utils';
 import { m_0 } from '../../../styles';
+import { headerPadding } from '../../../styles/common';
 @withNavigation
 export default class MyHeader extends React.Component {
     constructor() {
@@ -18,7 +19,7 @@ export default class MyHeader extends React.Component {
     render() {
         const { showLeft, renderRight, route, leftText, bgColor, color, showLeftIcon = true, renderBody, ChevronLeft } = this.props
         return (
-            <Header style={[{ marginTop: -1, paddingTop: px2dp(24) }, spaceBtw, alignItemsC, getBorder('b'), headerHeight, { backgroundColor: bgColor ? bgColor : "#F8F8F8" }]}>
+            <Header style={[{ marginTop: -1, paddingTop: px2dp(24) }, spaceBtw, alignItemsC, getBorder('b'), headerHeight,headerPadding, { backgroundColor: bgColor ? bgColor : "#F8F8F8" }]}>
                 <View style={[getFlex(3), row, alignItemsC]}>{
                     (route || showLeft) &&
                     <Button transparent style={[getFlex(1), { marginLeft: isAndroid ? px2dp(-5) : 0, paddingLeft: 0 }]} onPress={this._nav} dark>

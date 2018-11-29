@@ -1,7 +1,7 @@
 import { px2dp, getHeight } from "./fn";
 import { COLOR_INFO, COLOR_LIGHT, COLOR_PRIMARY, COLOR_BLACK, WHITE, COLOR_WHITE } from "./constant";
 import { isAndroid } from '../utils';
-
+import { StatusBar } from "react-native";
 export const head = {
     fontSize: px2dp(16),
     color: '#000',
