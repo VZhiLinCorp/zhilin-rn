@@ -9,8 +9,8 @@ export default class InfoBlock extends React.Component {
 
     }
     render() {
-        const { rows = [], style = [], onPress, bg = bgPrimary, color = colorWhite } = this.props;
-        const textStyle = [color, fontSizeSm, getFontWeight('800')]
+        const { rows = [], style = [], onPress, bg = bgPrimary, color = colorWhite, textStyle = {} } = this.props;
+        const _textStyle = [color, fontSizeSm, getFontWeight('800'), ...textStyle]
         return (
             <PaddingBox style={[bg, ...style]} onPress={onPress} >
 
@@ -20,7 +20,7 @@ export default class InfoBlock extends React.Component {
                             <View style={[row, spaceBtw, (index !== 0) && mt_sm]}>
                                 {
                                     r.map(rowItem => {
-                                        return <Text style={textStyle}>{rowItem}</Text>
+                                        return <Text style={_textStyle}>{rowItem}</Text>
                                     })
                                 }
                             </View>
