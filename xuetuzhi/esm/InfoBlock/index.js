@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { fontSizeXs, row, spaceBtw, mt_xs, bgPrimary, colorWhite, getFontWeight } from '../../../styles';
+import { fontSizeXs, row, spaceBtw, mt_xs, bgPrimary, colorWhite, getFontWeight, mt_sm } from '../../../styles';
 
 import { StatusBadge, PaddingBox } from '../index';
 export default class InfoBlock extends React.Component {
@@ -17,7 +17,7 @@ export default class InfoBlock extends React.Component {
                 {
                     rows.map((r, index) => {
                         return (
-                            <View style={[row, spaceBtw, (index !== 0) && mt_xs]}>
+                            <View style={[row, spaceBtw, (index !== 0) && mt_sm]}>
                                 {
                                     r.map(rowItem => {
                                         return <Text style={textStyle}>{rowItem}</Text>
