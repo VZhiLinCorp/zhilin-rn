@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Tab, Tabs, View, Text, } from 'native-base'
 import { pp_sm, pv_n, px2dp, getFlex, bgPrimary, bgBlack, colorWhite } from '../../../styles';
 import { default as InfoBlock } from '../InfoBlock';
-export class InfoTabLayout extends Component {
+export default class InfoTabLayout extends Component {
     constructor() {
         super(...arguments)
     }
