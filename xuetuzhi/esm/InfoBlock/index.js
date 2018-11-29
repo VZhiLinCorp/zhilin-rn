@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { fontSizeXs, row, spaceBtw, mt_xs, bgPrimary, colorWhite, getFontWeight, mt_sm } from '../../../styles';
+import { fontSizeXs, row, spaceBtw, mt_xs, bgPrimary, colorWhite, getFontWeight, mt_sm, fontSizeSm } from '../../../styles';
 
 import { StatusBadge, PaddingBox } from '../index';
 export default class InfoBlock extends React.Component {
@@ -9,8 +9,8 @@ export default class InfoBlock extends React.Component {
 
     }
     render() {
-        const { rows = [], style = [], onPress } = this.props;
-        const textStyle = [colorWhite, fontSizeXs, getFontWeight('800')]
+        const { rows = [], style = [], onPress, bg = bgPrimary } = this.props;
+        const textStyle = [colorWhite, fontSizeSm, getFontWeight('800')]
         return (
             <PaddingBox style={[bgPrimary, ...style]} onPress={onPress} >
 

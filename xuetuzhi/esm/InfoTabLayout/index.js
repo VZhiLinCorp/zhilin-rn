@@ -9,10 +9,10 @@ export class InfoTabLayout extends Component {
 
 
     render() {
-        const { contentTabs, rows } = this.props
+        const { contentTabs, rows, bg = bgPrimary } = this.props
         return (
             <View style={[getFlex()]}>
-                <InfoBlock rows={rows} />
+                <InfoBlock rows={rows} bg={bg} />
                 <Tabs initialPage={0} tabBarUnderlineStyle={{ height: px2dp(1.5) }}>
                     {
                         Object.entries(contentTabs).map((i, index) => {
