@@ -1,3 +1,1 @@
-
-
-export const type = 'module'
+export * from 'victory-native'
