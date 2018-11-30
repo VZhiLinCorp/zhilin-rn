@@ -11,11 +11,9 @@ export default class Touch extends React.Component {
     render() {
         return (
             <TouchableHighlight underlayColor="#eee"  {...this.props}>
-                <View>
-                    {
-                        React.Children.map(this.props.children, c => React.cloneElement(c))
-                    }
-                </View>
+                {
+                    React.Children.map(this.props.children, c => React.cloneElement(c))
+                }
             </TouchableHighlight>
         )
     }
