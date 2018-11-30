@@ -10,10 +10,11 @@ export default class InfoBlock extends React.Component {
 
     }
     render() {
-        const { rows = [], style = [], onPress, bg = bgPrimary, bgColors = ['#66ccff', '#3399ff', '#0066cc'], color = colorWhite, textStyle = [] } = this.props;
+        const { jb = true, rows = [], style = [], onPress, bg , bgColors = ['#66ccff', '#3399ff', '#0066cc'], color = colorWhite, textStyle = [] } = this.props;
         const _textStyle = [color, fontSizeSm, ...textStyle]
+        const bgC = bg ? bg : bgColors;
         return (
-            <LinearGradient colors={bgColors}  start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
+            <LinearGradient colors={bgC} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
                 <PaddingBox style={[...style]} onPress={onPress}>
                     {
                         rows.map((r, index) => {

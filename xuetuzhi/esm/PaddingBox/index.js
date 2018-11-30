@@ -14,7 +14,7 @@ export default class PaddingBox extends PureComponent {
         const { children, style = [], onPress } = this.props
         const Wrap = typeof onPress === 'function' ? Touch : View
         return (
-            <Wrap style={[pv_n, pp_sm, bgWhite, ...style]} onPress={onPress}>
+            <Wrap style={[pv_n, pp_sm, ...style]} onPress={onPress}>
                 {
                     React.Children.map(children, c => React.cloneElement(c))
                 }

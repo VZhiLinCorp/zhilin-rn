@@ -9,7 +9,7 @@ export default class InfoTabLayout extends Component {
 
 
     render() {
-        const { contentTabs, rows, bg = bgPrimary, color = colorWhite,textStyle } = this.props
+        const { contentTabs, rows, bg, color = colorWhite,textStyle } = this.props
         return (
             <View style={[getFlex()]}>
                 <InfoBlock rows={rows} bg={bg} color={color} textStyle={textStyle} />
