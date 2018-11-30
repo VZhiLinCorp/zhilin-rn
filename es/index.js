@@ -1,2 +1,2 @@
 export * from 'victory-native'
-export * from 'react-native-svg'
+export { Svg } from 'react-native-svg'
