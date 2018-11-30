@@ -1,6 +1,6 @@
 {
   "name": "zhilin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "rn",
   "keywords": [
     "react native"
@@ -25,8 +25,10 @@
     "native-base": "^2.8.1",
     "react-dom": "~16.6.0",
     "react-native": "0.57.4",
+    "react-native-svg": "^8.0.8",
     "react-native-linear-gradient": "^2.5.2",
-    "react-native-vector-icons": "^6.0.2"
+    "react-native-vector-icons": "^6.0.2",
+    "victory-native": "^31.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
