@@ -61,7 +61,7 @@ export default class ConformModal extends React.Component {
                         <Button style={[getHeight(44), getFlex(), center, getRadius(0)]} onPress={_onComfirm}>
                             <Text style={[colorWhite, fontSizeN]}>
                                 {
-                                    confirmText ? confirmText : 确定
+                                    confirmText ? confirmText : '确定'
                                 }
                             </Text>
                         </Button>
