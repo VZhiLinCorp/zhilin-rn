@@ -15,7 +15,7 @@ export default class TitleCard extends React.Component {
         right: ''
     }
     render() {
-        const { title, children, right, renderRight } = this.props
+        const { title, children, right, renderRight, renderFoot } = this.props
         return (
             <Card style={[bgWhite]}>
                 <View bordered style={[getMorP(1, 0, 'l'), getHeight(50), row, alignItemsC, getBorder('b')]}>
@@ -34,6 +34,9 @@ export default class TitleCard extends React.Component {
                         React.Children.map(children, c => React.cloneElement(c))
                     }
                 </CardItem>
+                {
+                    renderFoot ? renderFoot() : null
+                }
             </Card>
         )
     }
