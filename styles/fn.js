@@ -1,7 +1,6 @@
 import { PixelRatio } from "react-native";
 import { isNumber } from 'lodash'
-import { isAndroid } from "../utils";
-import { screenW } from ".";
+import { isAndroid, screenW } from "../utils";
 const fontSizeScaler = isAndroid ? (1 / PixelRatio.getFontScale()) : 1
 export const px2dp = px => PixelRatio.roundToNearestPixel(px);
 

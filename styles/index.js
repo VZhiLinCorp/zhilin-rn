@@ -10,14 +10,6 @@ export * from './common'
 export * from './fn'
 export * from './color'
 
-export const statusHeight = (Platform.OS === 'android') ? StatusBar.currentHeight : 25;
 export const screenW = Dimensions.get("window").width;
 export const screenH = Dimensions.get("window").height;
-export const drawerWidth = screenW / 3 * 2;
-
-
-
-export const setRadius = size => {
-
-}
 
