@@ -1,5 +1,5 @@
 import React, { StyleSheet, Dimensions, PixelRatio, Platform, StatusBar } from "react-native";
-import { getFontSize, getHeight, getMorP, getLineHeight, getFontWeight } from "./fn";
+import { getFontSize,  getHeight, getMorP, getLineHeight, getFontWeight } from "./fn";
 import { FONT_SIZE_BIG, FONT_SIZE_XS, FONT_SIZE_SM, FONT_SIZE_MD, FONT_SIZE_N, FONT_SIZE_LG } from "./constant";
 
 
@@ -69,6 +69,7 @@ export const p_sm = getMorP(1, 10, 'trbl')
 export const p_md = getMorP(1, 20, 'trbl')
 
 export const pp_md = getMorP(1, 20, 'lr')
+export const pp_n = getMorP(1, 15, 'lr')
 export const pp_sm = getMorP(1, 10, 'lr')
 export const pp_xs = getMorP(1, 5, 'lr')
 
