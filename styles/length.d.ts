@@ -1,5 +1,5 @@
 import React, { StyleSheet, Dimensions, PixelRatio, Platform, StatusBar } from "react-native";
-import { getFontSize, px2dp, getHeight, getMorP, getLineHeight, getFontWeight } from "./fn";
+import { getFontSize, getHeight, getMorP, getLineHeight, getFontWeight } from "./fn";
 import { FONT_SIZE_BIG, FONT_SIZE_XS, FONT_SIZE_SM, FONT_SIZE_MD, FONT_SIZE_N, FONT_SIZE_LG } from "./constant";
 
 

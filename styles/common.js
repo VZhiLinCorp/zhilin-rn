@@ -1,7 +1,11 @@
-import { px2dp, getHeight } from "./fn";
+import { getHeight } from "./fn";
 import { COLOR_INFO, COLOR_LIGHT, COLOR_PRIMARY, COLOR_BLACK, WHITE, COLOR_WHITE } from "./constant";
 import { isAndroid } from '../utils';
 import { StatusBar } from "react-native";
+
+import { PixelRatio } from "react-native";
+const px2dp = px => PixelRatio.roundToNearestPixel(px);
+
 export const head = {
     fontSize: px2dp(16),
     color: '#000',
@@ -49,21 +53,21 @@ export const tabViewStyle = {
 }
 
 export const btnClassic = {
-     backgroundColor:COLOR_PRIMARY, 
-     color:COLOR_WHITE
+    backgroundColor: COLOR_PRIMARY,
+    color: COLOR_WHITE
 }
 
 export const btnSimple = {
-    backgroundColor:COLOR_WHITE, 
-    color:COLOR_PRIMARY,
-    borderColor:COLOR_PRIMARY
+    backgroundColor: COLOR_WHITE,
+    color: COLOR_PRIMARY,
+    borderColor: COLOR_PRIMARY
 }
 export const formInput = {
     textAlign: 'right',
-    paddingRight:px2dp(7) 
+    paddingRight: px2dp(7)
 }
-export const formItem = { 
-    paddingRight:px2dp(10) 
+export const formItem = {
+    paddingRight: px2dp(10)
 }
 
 //统一的状态栏属性

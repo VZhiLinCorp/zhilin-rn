@@ -10,7 +10,8 @@ var customThemePath = path.resolve(root, pkgThemePath)
 
 var customTheme = require(customThemePath) || {}
 var themePath = path.resolve(require.resolve('zhilin-rn'), '../../theme.js')
-var theme = require(themePath)
+// var theme = require(themePath)
+var theme = {}
 var result = Object.assign({}, theme, customTheme)
 if (fs.existsSync(themePath)) {
     fs.writeFileSync(themePath, `export default ${JSON.stringify(result)}`)
