@@ -14,7 +14,8 @@
     "es",
     "xuetuzhi/",
     "styles/",
-    "icons/"
+    "icons/",
+    "images/"
   ],
   "license": "MIT",
   "main": "lib/index.js",
