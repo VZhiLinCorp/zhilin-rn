@@ -45,3 +45,4 @@ export const FONT_SIZE_SM = px2dp(14);
 export const FONT_SIZE_XS = px2dp(12);
 
 export const INPUT_FONT_SIZE = px2dp(16)
+export const DEFAULT_AVATAR_SIZE = px2dp(40)

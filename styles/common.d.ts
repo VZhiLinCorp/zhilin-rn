@@ -77,3 +77,7 @@ export const statusbarIsTranslucent = isAndroid ? false : true
 export const statusbarFontStyle = 'dark-content';
 export const headerHeight = isAndroid ? (getHeight(40) + StatusBar.currentHeight) : {}
 export const headerPadding = isAndroid ? { paddingTop: StatusBar.currentHeight } : {}
+
+
+//杂项
+export const ovf_h = { overflow: 'hidden' }

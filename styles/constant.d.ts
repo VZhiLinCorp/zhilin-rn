@@ -1,83 +1,48 @@
-import { getHeight } from "./fn";
-import { COLOR_INFO, COLOR_LIGHT, COLOR_PRIMARY, COLOR_BLACK, WHITE, COLOR_WHITE } from "./constant";
-import { isAndroid } from '../utils';
-import { StatusBar } from "react-native";
+// import { px2dp } from './fn';
 
 import { PixelRatio } from "react-native";
 const px2dp = px => PixelRatio.roundToNearestPixel(px);
 
-export const head = {
-    fontSize: px2dp(16),
-    color: '#000',
-    fontWeight: 'bold'
-}
-export const listItemTitle = {
-    fontSize: px2dp(16),
-    color: '#323538',
-    fontWeight: 'normal'
-}
-export const listItemContent = {
-    fontSize: px2dp(14),
-    color: COLOR_INFO,
-}
-export const listItemSub = {
-    fontSize: px2dp(14),
-    color: COLOR_LIGHT
-}
+import theme from '../theme'
+export const COLOR_PRIMARY = theme.primaryColor
+export const COLOR_PRIMARY_SUB = '#19a899'
+export const COLOR_PRIMARY_LIGHT = '#e5f2f1'
 
-export const menuItem = {
-    fontSize: px2dp(20),
-    color: COLOR_LIGHT
-}
-export const menuItemFocus = {
-    fontSize: px2dp(20),
-    color: COLOR_PRIMARY
-}
-export const avator = {
-    width: px2dp(20),
-    height: px2dp(20),
-    borderRadius: px2dp(20) / 2
-}
+export const COLOR_SAFE = '#6af'
+export const COLOR_SUCCESS = '#5cb85c'
+export const COLOR_DANGER = '#ff6028'
+export const COLOR_WARNING = '#febb49'
 
+export const COLOR_ICON_TEXT = '#5E6C92'
 
-export const tabViewStyle = {
-    labelStyle: {
-        color: COLOR_BLACK
-    },
-    style: {
-        backgroundColor: WHITE
-    },
-    indicatorStyle: {
-        backgroundColor: COLOR_PRIMARY
-    }
-}
+export const COLOR_DARK = '#000'
+export const COLOR_WHITE = '#fff'
+export const COLOR_BLUE = '#5FB8F1'
+export const COLOR_GREEN = '#45CD9B'
+export const COLOR_ORANGE = '#FE9141'
 
-export const btnClassic = {
-    backgroundColor: COLOR_PRIMARY,
-    color: COLOR_WHITE
-}
+export const COLOR_BLACK = '#333'
+export const COLOR_INFO = '#666'
+export const COLOR_LIGHT = '#999'
+export const COLOR_SUB = '#cfdbda'
+export const COLOR_PRESS = '#eee'
+export const COLOR_PLACEHOLDER = '#ccc'
+export const BORDER_COLOR = '#e5e8eb'
 
-export const btnSimple = {
-    backgroundColor: COLOR_WHITE,
-    color: COLOR_PRIMARY,
-    borderColor: COLOR_PRIMARY
-}
-export const formInput = {
-    textAlign: 'right',
-    paddingRight: px2dp(7)
-}
-export const formItem = {
-    paddingRight: px2dp(10)
-}
+// export const BORDER_COLOR_LIGHT = '#ccc'
 
-//统一的状态栏属性
-export const statusbarIsHidden = false
-export const statusbarBgColor = '#fff'
-export const statusbarIsTranslucent = isAndroid ? false : true
-export const statusbarFontStyle = 'dark-content';
-export const headerHeight = isAndroid ? (getHeight(40) + StatusBar.currentHeight) : {}
-export const headerPadding = isAndroid ? { paddingTop: StatusBar.currentHeight } : {}
+export const androidStatusBarColor = '#000'
+export const BG_GRAY = '#f3f5f7'
+export const BLOCK_GRAY = '#f2f2f2'
+export const WHITE = '#fff'
+export const colorPrimaryDark = '#00897B'
+/****************大小****************/
+export const FONT_SIZE_LG = px2dp(30);
+export const FONT_SIZE_BIG = px2dp(19);
+export const FONT_SIZE_MD = px2dp(18);
+export const FONT_SIZE_N = px2dp(16);
+export const FONT_SIZE_SM = px2dp(14);
+export const FONT_SIZE_XS = px2dp(12);
 
-
-//杂项
-export const ovf_h = { overflow: 'hidden' }
+export const INPUT_FONT_SIZE = px2dp(16)
+export const DEFAULT_AVATAR_SIZE = px2dp(40)

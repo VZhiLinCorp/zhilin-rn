@@ -13,7 +13,7 @@ export {default as Add} from './Add'
 export {default as MyHeader} from './MyHeader'
 export {default as InfoTabLayout} from './InfoTabLayout'
 export {default as ConformModal} from './ConformModal'
-
+export {default as MyAvatar} from './MyAvatar'
 
 
 

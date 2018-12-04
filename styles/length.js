@@ -1,6 +1,6 @@
 import React, { StyleSheet, Dimensions, PixelRatio, Platform, StatusBar } from "react-native";
-import { getFontSize,  getHeight, getMorP, getLineHeight, getFontWeight } from "./fn";
-import { FONT_SIZE_BIG, FONT_SIZE_XS, FONT_SIZE_SM, FONT_SIZE_MD, FONT_SIZE_N, FONT_SIZE_LG } from "./constant";
+import { getFontSize, getHeight, getMorP, getLineHeight, getFontWeight, getSquare } from "./fn";
+import { FONT_SIZE_BIG, FONT_SIZE_XS, FONT_SIZE_SM, FONT_SIZE_MD, FONT_SIZE_N, FONT_SIZE_LG, DEFAULT_AVATAR_SIZE } from "./constant";
 
 
 export const lhXs = getLineHeight(FONT_SIZE_XS * 1.5)
@@ -85,3 +85,4 @@ export const bold = getFontWeight('bold')
 
 //
 export const formItemHeight = getHeight(40)
+export const defaultAvatarSize = getSquare(DEFAULT_AVATAR_SIZE)
