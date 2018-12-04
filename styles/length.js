@@ -83,6 +83,6 @@ export const pv_xs = getMorP(1, 5, 'tb')
 
 export const bold = getFontWeight('bold')
 
-//
-export const formItemHeight = getHeight(40)
-export const defaultAvatarSize = getSquare(DEFAULT_AVATAR_SIZE)
+// 
+export const formItemHeight = getHeight(40)  //表单项高度
+export const defaultAvatarSize = getSquare(DEFAULT_AVATAR_SIZE, true)  //头像大小

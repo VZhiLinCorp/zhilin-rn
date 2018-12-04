@@ -85,4 +85,4 @@ export const bold = getFontWeight('bold')
 
 // 
 export const formItemHeight = getHeight(40)  //表单项高度
-export const defaultAvatarSize = getSquare(DEFAULT_AVATAR_SIZE)  //头像大小
+export const defaultAvatarSize = getSquare(DEFAULT_AVATAR_SIZE, true)  //头像大小
