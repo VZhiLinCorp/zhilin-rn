@@ -1,0 +1,1 @@
+export function getAvatar(uri: string): any
