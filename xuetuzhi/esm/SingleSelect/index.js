@@ -7,6 +7,7 @@ import { COLOR_LIGHT } from 'zhilin-rn/styles';
 import { autobind } from 'zhilin-rn/utils';
 import { Chevron, QueryIcon } from '../../../icons';
 import Touch from '../Touch';
+import CheckBox from '../CheckBox';
 
 @autobind
 export default class SingleSelect extends Component {
@@ -114,11 +115,10 @@ export default class SingleSelect extends Component {
                             {
                                 data.map(item => {
                                     const itemValue = item[valueName]
-                                    let isChecked = itemValue === _value
+                                    let checked = itemValue === _value
                                     return <Touch style={[styles.item, bgWhite, getFlex()]} key={item[valueName]} onPress={() => setValue(isChecked ? '' : itemValue)} >
                                         <View style={{ justifyContent: 'center', paddingRight: 12, paddingLeft: 12 }}  >
-                                            <Image source={isChecked ? require("../images/checked.png") :
-                                                require("../images/unchecked.png")} />
+                                            <CheckBox checked={checked} />
                                         </View>
                                         <View style={{ flex: 1 }}>
                                             <View >
