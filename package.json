@@ -10,8 +10,8 @@
     "url": "git+https://github.com/VZhiLinCorp/zhilin-rn.git"
   },
   "files": [
-    "lib",
-    "es",
+    "lib/",
+    "es/",
     "xuetuzhi/",
     "styles/",
     "icons/",

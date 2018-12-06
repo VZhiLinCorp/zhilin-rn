@@ -7,6 +7,7 @@ import BottomBlock from '../BottomBlock';
 import Touch from '../Touch';
 import PaddingBox from '../PaddingBox';
 import FormItem from '../FormItem';
+import { QueryIcon } from '../../../icons';
 
 
 export default class Query extends React.PureComponent {
@@ -72,7 +73,7 @@ export default class Query extends React.PureComponent {
                     </View>
                 ) : (
                     <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_xs, getBorder('b')]}>
-                        <Icon type="MaterialCommunityIcons" name="playlist-edit" />
+                        <QueryIcon />
                         <Text numberOfLines={1} style={[fontSizeN, colorBlack, ml_sm]}>{textFn()}</Text>
                     </Touch>
                 )
@@ -80,7 +81,7 @@ export default class Query extends React.PureComponent {
         )
     }
 
-    static config(query,textFn) {
+    static config(query, textFn) {
         this.queryCommit = queryCommit.bind(this)
         this.textFn = textFn.bind(this)
         this.toggleQueryShow = toggleQueryShow.bind(this)

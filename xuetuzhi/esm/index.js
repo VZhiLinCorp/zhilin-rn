@@ -17,4 +17,6 @@ export {default as MyAvatar} from './MyAvatar'
 export {default as Calendar} from './Calendar'
 export {default as FormItem} from './FormItem'
 export {default as Query} from './Query'
+export {default as SingleSelect} from './SingleSelect'
+
 
