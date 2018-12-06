@@ -12,4 +12,4 @@ export const isIphoneX = Platform.OS === "ios" && (screenH === 812 || screenW ==
 export { default as autobind } from 'autobind-decorator'
 export { default as emitter } from './emitter'
 export { default as setHeader } from './setHeader'
-
+export * from './constant' 

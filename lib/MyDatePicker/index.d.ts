@@ -4,7 +4,7 @@ import react from 'react'
 
 interface MyDatePickerProps extends DatePickerProps {
     style: array;
-    iconDirection: "left" | "right" | "top" | "bottom"
+    iconDirection: "left" | "right" | "up" | "down"
 }
 
 declare class MyDatePicker extends react.Component<MyDatePickerProps> {

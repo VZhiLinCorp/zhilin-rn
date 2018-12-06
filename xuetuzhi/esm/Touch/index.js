@@ -9,9 +9,9 @@ export default class Touch extends React.Component {
         super(...arguments)
     }
     render() {
-        const { style = [], ...props } = this.props
+        const { style = [], outerStyle = [], ...props } = this.props
         return (
-            <TouchableHighlight underlayColor="#eee" {...props}>
+            <TouchableHighlight underlayColor="#eee" {...props} style={[...outerStyle]}>
                 <View style={style}>
                     {
                         React.Children.map(this.props.children, c => React.cloneElement(c))

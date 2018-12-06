@@ -1,3 +1,7 @@
+export {default as MyDatePicker} from './MyDatePicker'
 
 
-export const type = 'main'
+
+
+
+

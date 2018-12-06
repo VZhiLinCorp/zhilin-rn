@@ -15,7 +15,6 @@ export {default as InfoTabLayout} from './InfoTabLayout'
 export {default as ConformModal} from './ConformModal'
 export {default as MyAvatar} from './MyAvatar'
 export {default as Calendar} from './Calendar'
-export {default as MyDatePicker} from './MyDatePicker'
 
 
 
