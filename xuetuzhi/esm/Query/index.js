@@ -73,8 +73,8 @@ export default class Query extends React.PureComponent {
                     </View>
                 ) : (
                     <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_xs, getBorder('b')]}>
-                        <QueryIcon />
-                        <Text numberOfLines={1} style={[fontSizeN, colorBlack, ml_sm]}>{textFn()}</Text>
+                        <QueryIcon style={[colorInfoLight]} />
+                        <Text numberOfLines={1} style={[fontSizeN, colorBlack, ml_xs]}>{textFn()}</Text>
                     </Touch>
                 )
 
