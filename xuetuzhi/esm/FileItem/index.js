@@ -4,7 +4,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { fontSizeN, getFlex, row, getBorder, fontSizeXs, alignItemsC, mp_xs, ml_xs, p_xs, COLOR_PRIMARY, COLOR_LIGHT, fontSizeSm } from "../../../styles";
 import { colorInfoLight } from "../../../styles";
 import { Touch, ProgressCircle, PaddingBox } from "../index";
+import { autobind } from "zhilin-rn/utils";
 
+@autobind
 export default class FileListItem extends Component {
     constructor() {
         super(...arguments);
@@ -12,6 +14,8 @@ export default class FileListItem extends Component {
     }
 
     download(fileUserId, file, DownloadUrl, realExtension, myDownload, updateFile) {
+        const { downloadTasks, removeFile } = this.props
+
         return () => {
             const task = myDownload(DownloadUrl, realExtension, updateFile)
             updateFile({ id: fileUserId, task, ...file })
@@ -25,17 +29,17 @@ export default class FileListItem extends Component {
                 console.log('====================================');
 
             }).catch((err) => {
-                debugger
+                FileListItem.cancel(fileUserId, downloadTasks, removeFile)()
             })
         }
     }
 
-    cancel(fileUserId, downloadTasks, removeFile) {
+    static cancel(fileUserId, downloadTasks, removeFile) {
         return () => {
             const task = downloadTasks[fileUserId]
             task && task.cancel((err) => {
-                removeFile([fileUserId])
             })
+            removeFile([fileUserId])
         }
     }
     renderInitialIcon(progress, download) {
@@ -67,7 +71,7 @@ export default class FileListItem extends Component {
 
     }
     render() {
-        const { props, cancel, download } = this
+        const { props, download } = this
         const { routeName, file, FileIcon, color = COLOR_PRIMARY, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, DownloadUrl, FileId } = file
         const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
@@ -87,7 +91,7 @@ export default class FileListItem extends Component {
                 DownloadBtn = this.renderDoneIcon(progress, color)
             } else {
                 //下载中
-                DownloadBtn = FileListItem.renderCancelIcon(progress, cancel(fileUserId, downloadTasks, removeFile), color)
+                DownloadBtn = FileListItem.renderCancelIcon(progress, FileListItem.cancel(fileUserId, downloadTasks, removeFile), color)
             }
         }
         const onPress = () => {
