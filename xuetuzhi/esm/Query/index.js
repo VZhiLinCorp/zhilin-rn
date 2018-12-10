@@ -18,7 +18,7 @@ export default class Query extends React.PureComponent {
         }
     }
     static defaultProps = {
-        showBtn: false
+        showBtn: true
     }
 
     render() {
