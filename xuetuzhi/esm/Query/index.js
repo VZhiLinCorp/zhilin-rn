@@ -17,10 +17,12 @@ export default class Query extends React.PureComponent {
 
         }
     }
-
+    static defaultProps = {
+        showBtn: false
+    }
 
     render() {
-        const { query, fa, isQueryShow } = this.props
+        const { query, fa, isQueryShow, showBtn } = this.props
         const { picks, states, inputs } = query
         const cancel = queryCancel.bind(fa)
         const commit = queryCommit.bind(fa)
@@ -29,7 +31,6 @@ export default class Query extends React.PureComponent {
             isQueryShow ?
                 (
                     <View style={[getFlex(), bgGray, getBorder('b')]}>
-
                         {
                             inputs.map(({ val, myKey, placeholder, cb }, index) => {
                                 return <View style={[getHeight(60), row, pp_sm, alignItemsC, bgWhite]}>
@@ -72,7 +73,7 @@ export default class Query extends React.PureComponent {
                         <BottomBlock title="查询" onPress={commit} />
                     </View>
                 ) : (
-                    <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_xs, getBorder('b')]}>
+                    showBtn && <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_xs, getBorder('b')]}>
                         <QueryIcon style={[colorInfoLight]} />
                         <Text numberOfLines={1} style={[fontSizeN, colorBlack, ml_xs]}>{textFn()}</Text>
                     </Touch>
