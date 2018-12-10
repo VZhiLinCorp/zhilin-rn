@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, ScrollView, TouchableHighlight, Image, ListView } from 'react-native'
-import { px2dp, fontSizeN, getFlex, listItemTitle, BORDER_COLOR, COLOR_INFO, row, alignItemsC, flexEnd, fontSizeBig, fontSizeMd, ml_sm, mp_sm, mr_sm, getMorP, COLOR_BLACK, COLOR_PLACEHOLDER } from 'zhilin-rn/styles';
+import { px2dp, fontSizeN, getFlex, listItemTitle, BORDER_COLOR, COLOR_INFO, row, alignItemsC, flexEnd, fontSizeBig, fontSizeMd, ml_sm, mp_sm, mr_sm, getMorP, COLOR_BLACK, COLOR_PLACEHOLDER, bgDanger, bgSafe, jc_c, getHeight, spaceBtw, pv_n, pp_n, pp_md, colorInfoLight, getBorder, p_0, alignSelfC, p_md, pv_sm, m_0 } from 'zhilin-rn/styles';
 import { colorBlack, bgGray, bgWhite, colorPrimary, } from 'zhilin-rn/styles';
 import Modal from "react-native-modal";
 import { COLOR_LIGHT } from 'zhilin-rn/styles';
@@ -21,7 +21,7 @@ export default class SingleSelect extends Component {
     }
 
     static getDerivedStateFromProps({ value }, { _value }) {
-        if (!_value) {
+        if (_value === '') {
             return {
                 _value: value
             }
@@ -79,32 +79,35 @@ export default class SingleSelect extends Component {
             return d[valueName] === value
         }) || {}
         return (
-            <View style={{ flex: 1, row }}>
-                <Touch onPress={_handleSetChoose()} style={[getFlex(), row, alignItemsC, left ? {} : flexEnd]}>
+            <View style={[getFlex()]}>
+                <Touch onPress={_handleSetChoose()} style={[row, left ? {} : flexEnd]} outerStyle={[getFlex(), jc_c]}>
                     {
                         left && <QueryIcon />
                     }
                     <Text style={[_selectedColor, fontSizeN, { flexShrink: 1 }]} numberOfLines={1}>{target[labelName] || '请选择'}</Text>
                     {
                         (!left) && <Chevron dir="right" />
-
                     }
                 </Touch>
                 <Modal ref={el => this.modal = el}
                     isVisible={this.state.visibleModal === true}
                     onBackdropPress={_handleSetChoose()}
-                    style={styles.bottomModal}
+                    style={[flexEnd, m_0]}
                     scrollTo={this.handleScrollTo}
                     scrollOffset={this.state.scrollOffset}
                     scrollOffsetMax={400 - 300} // content height - ScrollView height
                 >
 
-                    <View style={styles.scrollableModal}>
+                    <View style={[bgWhite, getHeight(300)]}>
 
-                        <View style={[bgWhite, styles.selShadow, { flexDirection: 'row', height: px2dp(50), alignItems: 'center' }]}>
-                            <Touch onPress={_handleSetChoose()} style={[getFlex(0.2), { textAlign: 'center' }]}><Text style={[colorPrimary, fontSizeN, { textAlign: 'center' }]}>取消</Text></Touch>
-                            <Text style={[getFlex(0.8), colorBlack, fontSizeN, { textAlign: 'center' }]}>请选择</Text>
-                            <Touch onPress={_handleSetChoose(true)} style={[getFlex(0.2), { textAlign: 'center' }]}><Text style={[colorPrimary, fontSizeN, { textAlign: 'center' }]}>确定</Text></Touch>
+                        <View style={[row, alignItemsC, getHeight(50), spaceBtw, getBorder('b')]}>
+                            <Touch onPress={_handleSetChoose()}>
+                                <Text style={[colorInfoLight, fontSizeN, pp_md, pv_sm]}>取消</Text>
+                            </Touch>
+                            <Text style={[colorBlack, fontSizeN]}>请选择</Text>
+                            <Touch onPress={_handleSetChoose(true)}>
+                                <Text style={[colorPrimary, fontSizeN, pp_md, pv_sm]}>确定</Text>
+                            </Touch>
                         </View>
                         <ScrollView
                             ref={ref => (this.scrollViewRef = ref)}
@@ -116,7 +119,8 @@ export default class SingleSelect extends Component {
                                 data.map(item => {
                                     const itemValue = item[valueName]
                                     let checked = itemValue === _value
-                                    return <Touch style={[styles.item, bgWhite, getFlex()]} key={item[valueName]} onPress={() => setValue(isChecked ? '' : itemValue)} >
+                                    debugger
+                                    return <Touch style={[bgWhite, getHeight(50), row, alignItemsC, getBorder('b')]} key={item[valueName]} onPress={() => setValue(checked ? null : itemValue)} >
                                         <View style={{ justifyContent: 'center', paddingRight: 12, paddingLeft: 12 }}  >
                                             <CheckBox checked={checked} />
                                         </View>
@@ -139,68 +143,7 @@ export default class SingleSelect extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    itemTitle: {
-        fontSize: px2dp(16),
-        marginLeft: px2dp(5),
-        color: "#333"
-    },
-    itemDetail: {
-        fontSize: px2dp(24),
-        color: "#c6c6c6"
-    },
-    backColor: {
-        backgroundColor: '#f3f5f7'
-    },
-    itemBackColor: {
-        backgroundColor: '#ffffff'
-    },
-    modalContent: {
-        backgroundColor: "white",
-        padding: 22,
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 4,
-        borderColor: "rgba(0, 0, 0, 0.1)"
-    },
-    bottomModal: {
-        justifyContent: "flex-end",
-        margin: 0,
-    },
-    modalBotton: {
-        marginTop: px2dp(10)
-    },
-    scrollableModal: {
-        height: 300,
-        backgroundColor: 'red'
-
-    },
-    scrollableModalContent1: {
-        height: 200,
-        backgroundColor: "orange",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    scrollableModalContent2: {
-        height: 200,
-        backgroundColor: "lightgreen",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    item: {
-        justifyContent: 'space-between',
-        flexDirection: 'row', padding: 5,
-        borderBottomColor: BORDER_COLOR,
-        borderBottomWidth: 0.5,
-        paddingLeft: 8,
-        paddingRight: 8,
-        paddingTop: 12,
-        paddingBottom: 12
-    },
-    selShadow: {
-        borderBottomColor: BORDER_COLOR,
-        borderBottomWidth: 0.5,
-    }
 
 
-})
+
+

@@ -50,8 +50,6 @@ export default class FileListItem extends Component {
                 } color={COLOR_LIGHT} />
             </Touch>
         )
-
-
     }
     renderDoneIcon(progress, color) {
         return <Touch style={[p_xs]}>
