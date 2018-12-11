@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, ScrollView, TouchableHighlight, Image, ListView } from 'react-native'
-import { px2dp, fontSizeN, getFlex, listItemTitle, BORDER_COLOR, COLOR_INFO, row, alignItemsC, flexEnd, fontSizeBig, fontSizeMd, ml_sm, mp_sm, mr_sm, getMorP, COLOR_BLACK, COLOR_PLACEHOLDER, bgDanger, bgSafe, jc_c, getHeight, spaceBtw, pv_n, pp_n, pp_md, colorInfoLight, getBorder, p_0, alignSelfC, p_md, pv_sm, m_0 } from 'zhilin-rn/styles';
+import { px2dp, fontSizeN, getFlex, listItemTitle, BORDER_COLOR, COLOR_INFO, row, alignItemsC, flexEnd, fontSizeBig, fontSizeMd, ml_sm, mp_sm, mr_sm, getMorP, COLOR_BLACK, COLOR_PLACEHOLDER, bgDanger, bgSafe, jc_c, getHeight, spaceBtw, pv_n, pp_n, pp_md, colorInfoLight, getBorder, p_0, alignSelfC, p_md, pv_sm, m_0, pv_xs } from 'zhilin-rn/styles';
 import { colorBlack, bgGray, bgWhite, colorPrimary, } from 'zhilin-rn/styles';
 import Modal from "react-native-modal";
 import { COLOR_LIGHT } from 'zhilin-rn/styles';
@@ -8,7 +8,7 @@ import { autobind } from 'zhilin-rn/utils';
 import { Chevron, QueryIcon } from '../../../icons';
 import Touch from '../Touch';
 import CheckBox from '../CheckBox';
-
+const HEIGHT = 42
 @autobind
 export default class SingleSelect extends Component {
     constructor() {
@@ -26,6 +26,7 @@ export default class SingleSelect extends Component {
                 _value: value
             }
         }
+        return {}
     }
     handleOnScroll = event => {
         this.setState({
@@ -52,12 +53,8 @@ export default class SingleSelect extends Component {
 
         return () => {
 
-            let target
             if (ok) {
-                target = data.find(d => {
-                    return d[valueName] === _value
-                }) || {}
-                onPress(target[valueName], target[labelName])
+                onPress(_value)
             }
             this.setState({
                 visibleModal: !visibleModal,
@@ -100,7 +97,7 @@ export default class SingleSelect extends Component {
 
                     <View style={[bgWhite, getHeight(300)]}>
 
-                        <View style={[row, alignItemsC, getHeight(50), spaceBtw, getBorder('b')]}>
+                        <View style={[row, alignItemsC, getHeight(HEIGHT), spaceBtw, getBorder('b')]}>
                             <Touch onPress={_handleSetChoose()}>
                                 <Text style={[colorInfoLight, fontSizeN, pp_md, pv_sm]}>取消</Text>
                             </Touch>
@@ -115,24 +112,25 @@ export default class SingleSelect extends Component {
                             scrollEventThrottle={16}
                             style={[bgGray]}
                         >
-                            {
-                                data.map(item => {
-                                    const itemValue = item[valueName]
-                                    let checked = itemValue === _value
-                                    debugger
-                                    return <Touch style={[bgWhite, getHeight(50), row, alignItemsC, getBorder('b')]} key={item[valueName]} onPress={() => setValue(checked ? null : itemValue)} >
-                                        <View style={{ justifyContent: 'center', paddingRight: 12, paddingLeft: 12 }}  >
-                                            <CheckBox checked={checked} />
-                                        </View>
-                                        <View style={{ flex: 1 }}>
-                                            <View >
-                                                <Text style={[listItemTitle]} numberOfLines={1}>{item[labelName]}</Text>
+                            <View style={[pv_xs, bgWhite]}>
+                                {
+                                    data.map(item => {
+                                        const itemValue = item[valueName]
+                                        let checked = itemValue === _value
+                                        return <Touch style={[bgWhite, getHeight(HEIGHT), row, alignItemsC]} key={item[valueName]} onPress={() => setValue(checked ? null : itemValue)} >
+                                            <View style={{ justifyContent: 'center', paddingRight: 12, paddingLeft: 12 }}  >
+                                                <CheckBox checked={checked} />
                                             </View>
-                                        </View>
+                                            <View style={{ flex: 1 }}>
+                                                <View >
+                                                    <Text style={[listItemTitle]} numberOfLines={1}>{item[labelName]}</Text>
+                                                </View>
+                                            </View>
 
-                                    </Touch>
-                                })
-                            }
+                                        </Touch>
+                                    })
+                                }
+                            </View>
                         </ScrollView>
 
                     </View>

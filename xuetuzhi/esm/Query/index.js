@@ -33,7 +33,7 @@ export default class Query extends React.PureComponent {
                     <View style={[getFlex(), bgGray, getBorder('b')]}>
                         {
                             inputs.map(({ val, myKey, placeholder, cb }, index) => {
-                                return <View style={[getHeight(60), row, pp_sm, alignItemsC, bgWhite]}>
+                                return <View style={[getHeight(60), row, pp_sm, alignItemsC, bgWhite]} key={index}>
                                     <View style={[getBorder(), getFlex(), getHeight(40), getRadius(5), row, alignItemsC]}>
                                         <Icon name="search" type="EvilIcons" style={[colorInfoLight, ml_xs]} />
                                         <Input placeholder={placeholder} value={val} onChangeText={val => { cb(myKey, val) }} />
@@ -109,12 +109,12 @@ function _setItem(type) {
         const { query } = this.state
         const target = query[type].find(t => t.myKey === myKey)
         target.val = val
-
         this.setState({
             query: Object.assign({}, query),
         }, () => {
-            if (target.fn && typeof fn === 'function') {
-                fn()
+            const { fn } = target
+            if (fn && typeof fn === 'function') {
+                fn.call(this, val)
             }
         })
 
