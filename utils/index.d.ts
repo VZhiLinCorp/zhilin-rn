@@ -2,7 +2,6 @@
 import { Dimensions, Platform } from "react-native";
 
 
-
 export const screenW = Dimensions.get("window").width;
 export const screenH = Dimensions.get("window").height;
 
@@ -12,4 +11,6 @@ export const isIphoneX = Platform.OS === "ios" && (screenH === 812 || screenW ==
 export { default as autobind } from 'autobind-decorator'
 export { default as emitter } from './emitter'
 export { default as setHeader } from './setHeader'
+export { connect } from 'react-redux';
+
 export * from './constant' 
