@@ -20,5 +20,5 @@ export var ChevronRightIcon = ({ style = [], ...p }) => {
 }
 
 export var QueryIcon = ({ style = [], ...p }) => {
-    return <Icon type="MaterialCommunityIcons" name="filter-outline" {...p} style={[colorPlaceholder, getFontSize(22), getMorP(0, -2, 'lrb'), ...style]} />
+    return <Icon type="MaterialCommunityIcons" name="format-list-bulleted" {...p} style={[colorPlaceholder, getFontSize(22), getMorP(0, -2, 'lrb'), ...style]} />
 }
