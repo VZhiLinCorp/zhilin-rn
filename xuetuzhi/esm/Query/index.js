@@ -73,7 +73,7 @@ export default class Query extends React.PureComponent {
                         <BottomBlock title="查询" onPress={commit} />
                     </View>
                 ) : (
-                    showBtn && <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_xs, getBorder('b')]}>
+                    showBtn && <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_sm, getBorder('b')]}>
                         <QueryIcon style={[colorInfoLight]} />
                         <Text numberOfLines={1} style={[fontSizeN, colorBlack, ml_xs]}>{textFn()}</Text>
                     </Touch>

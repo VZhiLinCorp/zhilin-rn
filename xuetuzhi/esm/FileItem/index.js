@@ -17,7 +17,7 @@ export default class FileListItem extends Component {
         const { downloadTasks, removeFile } = this.props
 
         return () => {
-            const task = myDownload(DownloadUrl, realExtension, updateFile)
+            const task = myDownload(DownloadUrl, realExtension)
             updateFile({ id: fileUserId, task, ...file })
             task.progress((received, total) => {
                 updateFile({ id: fileUserId, received, total })
@@ -45,32 +45,32 @@ export default class FileListItem extends Component {
     renderInitialIcon(progress, download) {
         return (
             <Touch onPress={download} style={[p_xs]}>
-                <ProgressCircle progress={progress} size={20} showIcon icon={
+                <ProgressCircle progress={progress || 0} size={20} showIcon icon={
                     <Icon name='arrow-down' color={COLOR_LIGHT} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
                 } color={COLOR_LIGHT} />
             </Touch>
         )
     }
-    renderDoneIcon(progress, color) {
+    renderDoneIcon(progress) {
         return <Touch style={[p_xs]}>
-            <ProgressCircle progress={progress} size={20} thickness={0} showIcon icon={
-                <Icon name='check' color={color} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
-            } color={color} />
+            <ProgressCircle progress={progress || 0} size={20} thickness={0} showIcon icon={
+                <Icon name='check' color={COLOR_PRIMARY} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
+            } color={COLOR_PRIMARY} />
         </Touch>
     }
-    static renderCancelIcon(progress, fn, color) {
+    static renderCancelIcon(progress, fn) {
         return (
             <Touch onPress={fn} style={[p_xs]}>
-                <ProgressCircle progress={progress} size={20} showIcon icon={
-                    <View style={{ width: 5, height: 5, backgroundColor: color }}></View>
-                } color={color} />
+                <ProgressCircle progress={progress || 0} size={20} showIcon icon={
+                    <View style={{ width: 5, height: 5, backgroundColor: COLOR_PRIMARY }}></View>
+                } color={COLOR_PRIMARY} />
             </Touch>
         )
 
     }
     render() {
         const { props, download } = this
-        const { routeName, file, FileIcon, color = COLOR_PRIMARY, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
+        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, DownloadUrl, FileId } = file
         const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
 
@@ -86,10 +86,10 @@ export default class FileListItem extends Component {
             if (path) {
                 //已经下载完成
                 openUrl = target.path
-                DownloadBtn = this.renderDoneIcon(progress, color)
+                DownloadBtn = this.renderDoneIcon(progress)
             } else {
                 //下载中
-                DownloadBtn = FileListItem.renderCancelIcon(progress, FileListItem.cancel(fileUserId, downloadTasks, removeFile), color)
+                DownloadBtn = FileListItem.renderCancelIcon(progress, FileListItem.cancel(fileUserId, downloadTasks, removeFile))
             }
         }
         const onPress = () => {

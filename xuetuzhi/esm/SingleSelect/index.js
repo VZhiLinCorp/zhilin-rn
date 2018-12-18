@@ -78,13 +78,17 @@ export default class SingleSelect extends Component {
         return (
             <View style={[getFlex()]}>
                 <Touch onPress={_handleSetChoose()} style={[row, left ? {} : flexEnd]} outerStyle={[getFlex(), jc_c]}>
-                    {
-                        left && <QueryIcon />
-                    }
+                    <Text>
+                        {
+                            left && <QueryIcon />
+                        }
+                    </Text>
                     <Text style={[_selectedColor, fontSizeN, { flexShrink: 1 }]} numberOfLines={1}>{target[labelName] || '请选择'}</Text>
-                    {
-                        (!left) && <Chevron dir="right" />
-                    }
+                    <Text>
+                        {
+                            (!left) && <Chevron dir="right" />
+                        }
+                    </Text>
                 </Touch>
                 <Modal ref={el => this.modal = el}
                     isVisible={this.state.visibleModal === true}
