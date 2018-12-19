@@ -5,7 +5,7 @@ import { fontSizeN, getFlex, row, getBorder, fontSizeXs, alignItemsC, mp_xs, ml_
 import { colorInfoLight } from "../../../styles";
 import { Touch, ProgressCircle, PaddingBox } from "../index";
 import { autobind } from "zhilin-rn/utils";
-
+const DOWNLOAD_URL_KEY = 'DownloadUrl'
 @autobind
 export default class FileListItem extends Component {
     constructor() {
@@ -18,7 +18,7 @@ export default class FileListItem extends Component {
 
         return () => {
             const task = myDownload(DownloadUrl, realExtension)
-            updateFile({ id: fileUserId, task, ...file })
+            updateFile({ id: fileUserId, realExtension, downloadPath: DownloadUrl, task, ...file })
             task.progress((received, total) => {
                 updateFile({ id: fileUserId, received, total })
             }).then((resp) => {
@@ -71,7 +71,8 @@ export default class FileListItem extends Component {
     render() {
         const { props, download } = this
         const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
-        const { FileExtension, FileNameWithoutExt, FileSizeString, DownloadUrl, FileId } = file
+        const { FileExtension, FileNameWithoutExt, FileSizeString, FileId } = file
+        const DownloadUrl = file[DOWNLOAD_URL_KEY]
         const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
 
         const fileUserId = FileId + userId
