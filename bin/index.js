@@ -3,7 +3,7 @@ var path = require('path')
 var fs = require('fs')
 
 var TAGET = 'theme'
-var root = path.join(__dirname, '../../../')
+var root = path.resolve(__dirname, '../../')
 var pkg = fs.readFileSync(path.resolve(root, 'package.json')).toString('utf8')
 var pkgThemePath = JSON.parse(pkg)[TAGET]
 var customThemePath = path.resolve(root, pkgThemePath)
