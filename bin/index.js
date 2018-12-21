@@ -3,10 +3,10 @@ var path = require('path')
 var fs = require('fs')
 
 var TAGET = 'theme'
-var root = path.resolve(__dirname, '../../')
-var pkg = fs.readFileSync(path.resolve(root, 'package.json')).toString('utf8')
+// var root = path.resolve(__dirname, '../../')
+var pkg = fs.readFileSync(path.resolve('package.json')).toString('utf8')
 var pkgThemePath = JSON.parse(pkg)[TAGET]
-var customThemePath = path.resolve(root, pkgThemePath)
+var customThemePath = path.resolve(pkgThemePath)
 
 var customTheme = require(customThemePath) || {}
 var themePath = path.resolve(require.resolve('zhilin-rn'), '../../theme.js')
