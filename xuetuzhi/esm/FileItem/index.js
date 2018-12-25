@@ -94,7 +94,7 @@ export default class FileListItem extends Component {
             }
         }
         const onPress = () => {
-            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, FileNameWithoutExt } })
+            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, fileName:FileNameWithoutExt } })
         }
 
 
