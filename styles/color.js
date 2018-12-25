@@ -40,23 +40,30 @@ const statusColors = {
     '未通过': colorDanger,
     '迟到': colorDanger,
     '未签退': colorDanger,
-
     '进行中': colorSafe,
 }
 //背景
 const statusBg = {
-    '待评价': bgWarning,
-    '评分中': bgWarning,
 
-    '进行中中': bgSafe,
-    '已通过': bgSafe,
+    '进行中': bgWarning,
+    '审核中': bgWarning,
 
+    '待评价': bgDanger,
+    '评分中': bgDanger,
+    '未评价': bgDanger,
     '未通过': bgDanger,
 
-    '结束': bgSub,
-	'已评价':bgSafe,
-    '未评价':bgDanger,
-	
+    '已通过': bgGreen,
+    '已签到': bgGreen,
+    '已签退': bgGreen,
+    
+    '去签退': bgBlue,
+    '去签到': bgBlue, 
+    '未提交': bgBlue, 
+    '未开始': bgBlue,  
+
+    '已结束': bgSub,
+    '已评价': bgSub, 
 }
 export const getStupidColor = (str) => {
     str = str || ''
