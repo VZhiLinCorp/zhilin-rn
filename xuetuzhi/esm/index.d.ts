@@ -15,10 +15,10 @@ export {default as InfoTabLayout} from './InfoTabLayout'
 export {default as ConformModal} from './ConformModal'
 export {default as MyAvatar} from './MyAvatar'
 export {default as Calendar} from './Calendar'
-export {default as MyDatePicker} from './MyDatePicker'
-
-
-
+export {default as FormItem} from './FormItem'
+export {default as Query} from './Query'
+export {default as SingleSelect} from './SingleSelect'
+export {default as CheckBox} from './CheckBox'
 
 
 

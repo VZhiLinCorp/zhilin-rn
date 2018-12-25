@@ -19,7 +19,6 @@ export var ChevronRightIcon = ({ style = [], ...p }) => {
     return <Icon name="chevron-right" type="MaterialCommunityIcons" {...p} style={[colorPlaceholder, getFontSize(22), getMorP(0, -2, 'lrb'), ...style]} />
 }
 
-export var ChevronRightIcon = ({ style = [], ...p }) => {
-    return <Icon name="chevron-right" type="MaterialCommunityIcons" {...p} style={[colorPlaceholder, getFontSize(22), getMorP(0, -2, 'lrb'), ...style]} />
+export var QueryIcon = ({ style = [], ...p }) => {
+    return <Icon type="MaterialCommunityIcons" name="format-list-bulleted" {...p} style={[colorPlaceholder, getFontSize(22), getMorP(0, -2, 'lrb'), ...style]} />
 }
-

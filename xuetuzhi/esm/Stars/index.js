@@ -9,7 +9,7 @@ export default class CultivatingSchemeDetail extends Component {
     }
 
     render() {
-        const { score = 0, color = COLOR_DANGER, onPress, size = 24, num = 5 } = this.props
+        const { score = 0, color = COLOR_DANGER, onPress=()=>{}, size = 24, num = 5 } = this.props
         return (
             <View style={[row]}>
                 {
