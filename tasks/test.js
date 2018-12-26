@@ -21,7 +21,6 @@ function getMorP(p, n, d = 'trbl') {
     _directions.forEach(d => {
         data[prefix + directionMap[d]] = n
     })
-
     return data
 }
 

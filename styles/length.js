@@ -64,6 +64,15 @@ export const pr_sm = getMorP(1, 10, 'r')
 
 
 export const pt_xs = getMorP(1, 5, 't')
+export const pt_sm = getMorP(1, 10, 't')
+export const pt_n = getMorP(1, 15, 't')
+export const pt_md = getMorP(1, 20, 't')
+
+export const pb_xs = getMorP(1, 5, 'b')
+export const pb_sm = getMorP(1, 10, 'b')
+export const pb_n = getMorP(1, 15, 'b')
+export const pb_md = getMorP(1, 20, 'b')
+
 export const p_xs = getMorP(1, 5, 'trbl')
 export const p_sm = getMorP(1, 10, 'trbl')
 export const p_md = getMorP(1, 20, 'trbl')
