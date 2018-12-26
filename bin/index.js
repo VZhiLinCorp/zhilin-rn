@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var THEME_KEY = 'theme'
 var FONTS_KEY = 'fonts-path'
-
+var shell = require('shelljs')
 var path = require('path')
 var fs = require('fs')
 var cwd = process.cwd()
@@ -32,7 +32,7 @@ var iconSet = generateIconSetFromCss(iconfontCss, 'icon-')
 fs.writeFileSync(iconfontJson, iconSet)
 fs.copyFileSync(sourceTtf, targetTtf)
 
-console.log('______', targetTtf)
+shell.exec('react-native link react-native-vector-icons')
 
 function resolve(p) {
     return path.resolve(cwd, p)
