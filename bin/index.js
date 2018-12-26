@@ -4,6 +4,7 @@ var fs = require('fs')
 
 var TAGET = 'theme'
 // var root = path.resolve(__dirname, '../../')
+
 var pkg = fs.readFileSync(path.resolve('package.json')).toString('utf8')
 var pkgThemePath = JSON.parse(pkg)[TAGET]
 var customThemePath = path.resolve(pkgThemePath)
@@ -16,3 +17,4 @@ var result = Object.assign({}, theme, customTheme)
 if (fs.existsSync(themePath)) {
     fs.writeFileSync(themePath, `export default ${JSON.stringify(result)}`)
 }
+console.log('_________',__dirname)
