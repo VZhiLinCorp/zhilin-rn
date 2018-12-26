@@ -37,6 +37,7 @@
     "victory-native": "^31.0.0"
   },
   "devDependencies": {
+    "shelljs":"^0.8.3",
     "babel-cli": "^6.26.0",
     "babel-preset-react-native": "^4.0.1",
     "cross-env": "^5.2.0",
