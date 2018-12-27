@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { fontSizeN, getFlex, row, getBorder, fontSizeXs, alignItemsC, mp_xs, ml_xs, p_xs, COLOR_PRIMARY, COLOR_LIGHT, fontSizeSm } from "../../../styles";
+import { fontSizeN, getFlex, row, getBorder, fontSizeXs, alignItemsC, mp_xs, ml_xs, p_xs, COLOR_PRIMARY, COLOR_LIGHT, fontSizeSm, bgWhite } from "../../../styles";
 import { colorInfoLight } from "../../../styles";
 import { Touch, ProgressCircle, PaddingBox } from "../index";
 import { autobind } from "zhilin-rn/utils";
@@ -94,7 +94,7 @@ export default class FileListItem extends Component {
             }
         }
         const onPress = () => {
-            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, fileName:FileNameWithoutExt } })
+            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, fileName: FileNameWithoutExt } })
         }
 
 
@@ -102,7 +102,7 @@ export default class FileListItem extends Component {
 
 
         return (
-            <PaddingBox onPress={onPress} style={[getBorder('b')]}>
+            <PaddingBox onPress={onPress} style={[getBorder('b'), bgWhite]}>
                 <View style={[row, getFlex(1), alignItemsC]} >
                     <FileIcon type={FileExtension} />
                     <View style={[getFlex(1), mp_xs]}>
