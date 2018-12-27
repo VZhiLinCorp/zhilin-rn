@@ -3,8 +3,8 @@ import react from 'react'
 
 
 interface Props {
-    content: object;
-    style: array;
+    content: Object;
+    style: Array<any>;
 }
 
 declare class TimeLine extends react.Component<Props> {
