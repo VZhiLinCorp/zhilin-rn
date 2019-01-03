@@ -4,7 +4,6 @@ export { default as TimeLine } from './TimeLine'
 export { default as IconFont } from './IconFont'
 export { default as MyList } from './MyList'
 export { default as MyVideo } from './MyVideo'
-export { default as MyVideo } from './MyVideo'
 
 
 
