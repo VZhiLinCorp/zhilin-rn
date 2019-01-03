@@ -73,17 +73,17 @@ export default class SingleSelect extends Component {
         _placeholderColor = { color: placeholderColor ? placeholderColor : COLOR_PLACEHOLDER }
         _selectedColor = { color: selectedColor ? selectedColor : COLOR_BLACK }
         const target = data.find(d => {
-            return d[valueName] === value
+            return d[valueName] == value
         }) || {}
         return (
             <View style={[getFlex()]}>
-                <Touch onPress={_handleSetChoose()} style={[row, left ? {} : flexEnd]} outerStyle={[getFlex(), jc_c]}>
+                <Touch onPress={_handleSetChoose()} style={[row, left ? {} : flexEnd,alignItemsC]} outerStyle={[getFlex(), jc_c]}>
                     <Text>
                         {
                             left && <QueryIcon />
                         }
                     </Text>
-                    <Text style={[_selectedColor, fontSizeN, { flexShrink: 1 }]} numberOfLines={1}>{target[labelName] || '请选择'}</Text>
+                    <Text style={[_selectedColor, fontSizeN, { flexShrink: 1 },jc_c]} numberOfLines={1}>{target[labelName] || '请选择'}</Text>
                     <Text>
                         {
                             (!left) && <Chevron dir="right" />
@@ -120,7 +120,7 @@ export default class SingleSelect extends Component {
                                 {
                                     data.map(item => {
                                         const itemValue = item[valueName]
-                                        let checked = itemValue === _value
+                                        let checked = itemValue == _value
                                         return <Touch style={[bgWhite, getHeight(HEIGHT), row, alignItemsC]} key={item[valueName]} onPress={() => setValue(checked ? null : itemValue)} >
                                             <View style={{ justifyContent: 'center', paddingRight: 12, paddingLeft: 12 }}  >
                                                 <CheckBox checked={checked} />
