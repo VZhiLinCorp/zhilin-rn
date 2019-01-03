@@ -12,5 +12,5 @@ export { default as autobind } from 'autobind-decorator'
 export { default as emitter } from './emitter'
 export { default as setHeader } from './setHeader'
 export { connect } from 'react-redux';
-
+export { default as Orientation } from 'react-native-orientation'
 export * from './constant' 
