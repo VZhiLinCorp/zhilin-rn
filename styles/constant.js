@@ -8,9 +8,9 @@ export const COLOR_PRIMARY = theme.primaryColor
 export const COLOR_PRIMARY_SUB = '#19a899'
 export const COLOR_PRIMARY_LIGHT = '#e5f2f1'
 
-export const COLOR_SAFE = '#6af'
-export const COLOR_SUCCESS = '#5cb85c'
-export const COLOR_DANGER = '#ff6028'
+export const COLOR_SAFE = '#3399ff'
+export const COLOR_SUCCESS = '#35c7b9'
+export const COLOR_DANGER = '#fe4f27'
 export const COLOR_WARNING = '#febb49'
 
 export const COLOR_ICON_TEXT = '#5E6C92'
