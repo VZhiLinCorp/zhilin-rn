@@ -33,11 +33,9 @@ export const colorWhite = getColor(COLOR_WHITE)//白色
 export const colorWarning = getColor(COLOR_WARNING)//白色
 export const colerPlaceHolder = getColor(COLOR_PLACEHOLDER)//
 export const colorIconText = getColor(COLOR_ICON_TEXT)//图标文字颜色
-export const COLOR_LIGHT_GREEN = getColor(COLOR_LIGHT_GREEN)//浅绿
-export const COLOR_HEIGHT_GREEN = getColor(COLOR_HEIGHT_GREEN)//深绿
+export const colorLightColor = getColor(COLOR_LIGHT_GREEN)//浅绿
+export const colorHeightColor = getColor(COLOR_HEIGHT_GREEN)//深绿
 
-
-//颜色
 const statusColors = {
     '未通过': colorDanger,
     '迟到': colorDanger,
