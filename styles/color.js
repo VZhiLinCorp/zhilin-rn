@@ -45,7 +45,7 @@ const statusColors = {
 //背景
 const statusBg = {
 
-    '进行中': bgWarning, 
+    '未开始': bgWarning, 
     '未提交': bgWarning,
 
     '待评价': bgDanger,
@@ -62,7 +62,7 @@ const statusBg = {
 
     '去签退': bgSafe,
     '去签到': bgSafe, 
-    '未开始': bgSafe,
+    '进行中': bgSafe,
     '审核中': bgSafe, 
     '审批中': bgSafe, 
 
