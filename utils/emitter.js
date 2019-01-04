@@ -19,7 +19,6 @@ class EventEmitter {
         this.events[event] = null
     }
     emit(event) {
-
         const args = [].slice.call(arguments, 1);
         const target = this.events[event]
         if (Array.isArray(target)) {

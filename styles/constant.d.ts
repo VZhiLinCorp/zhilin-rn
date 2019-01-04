@@ -23,6 +23,8 @@ export const COLOR_ORANGE = '#FE9141'
 
 export const COLOR_LIGHT_GREEN = '#3CDACD'
 export const COLOR_HEIGHT_GREEN = '#1FC1B1'
+export const COLOR_LIGHT_BLUE = '#8FC1FF'
+export const COLOR_HEIGHT_BLUE = '#3982E4'
 
 
 export const COLOR_BLACK = '#333'
