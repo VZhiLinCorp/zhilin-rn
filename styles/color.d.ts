@@ -43,6 +43,7 @@ const statusColors = {
     '迟到': colorDanger,
     '未签退': colorDanger,
     '进行中': colorSafe,
+    '旷工': colorDanger,
 }
 //背景
 const statusBg = {

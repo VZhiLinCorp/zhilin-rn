@@ -17,7 +17,7 @@ export default class TitleCard extends React.Component {
     render() {
         const { title, children, right, renderRight, renderFoot } = this.props
         return (
-            <Card style={[bgWhite]}>
+            <Card style={[bgWhite,getRadius(4)]}>
                 <View bordered style={[getMorP(1, 0, 'l'), getHeight(50), row, alignItemsC, getBorder('b')]}>
                     <View style={[{ width: 3, height: 20, borderTopRightRadius: 5, borderBottomRightRadius: 5 }, bgPrimary]}>
                     </View>
