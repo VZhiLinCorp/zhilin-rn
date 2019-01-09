@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Card, CardItem, Right } from 'native-base'
 
-import { getBorder, bgWhite, colorInfo, bgPrimary, alignItemsC, spaceBtw, row, getFlex, bold, getMorP, fontSizeN, fontSizeSm, ml_sm, getHeight, mp_sm } from '../../../styles';
+import { getBorder, bgWhite, colorInfo, bgPrimary, alignItemsC, spaceBtw, row, getFlex, bold, getMorP, fontSizeN, fontSizeSm, ml_sm, getHeight, mp_sm, getRadius } from '../../../styles';
 
 
 export default class TitleCard extends React.Component {
