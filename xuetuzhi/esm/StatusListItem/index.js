@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import { bgWhite, fontSizeXs, listItemTitle, getFlex, row, pp_sm, spaceBtw, mt_xs, getBorder, pv_n, colorInfoLight } from '../../../styles';
-
+import { IconFont } from 'zhilin-rn'
 import { StatusBadge, PaddingBox } from '../index';
 export default class StatusListItem extends React.Component {
     constructor() {
@@ -25,7 +25,12 @@ export default class StatusListItem extends React.Component {
                             <View style={[row, spaceBtw, mt_xs]} key={rIndex}>
                                 {
                                     r.map((c,cIndex) => {
-                                        return <Text style={textStyle} key={cIndex}>{c}</Text>
+                                        return(
+                                            <View style={[row, alignItemsC]}>
+                                                <IconFont name={rIndex<1?'time':'address'} style={[colorInfoLight, fontSizeXs, mr_xs]} />
+                                                <Text style={textStyle} key={cIndex}>{c}</Text>
+                                            </View>
+                                        )
                                     })
                                 }
                             </View>
