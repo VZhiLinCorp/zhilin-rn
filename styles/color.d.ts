@@ -1,5 +1,5 @@
 import { getColor, getBgColor } from "./fn";
-import { COLOR_LIGHT, COLOR_INFO, COLOR_BLACK, COLOR_SUCCESS, COLOR_DANGER, COLOR_PRIMARY, BG_GRAY, COLOR_WHITE, COLOR_SAFE, COLOR_PRIMARY_SUB, COLOR_WARNING, COLOR_SUB, COLOR_PLACEHOLDER, COLOR_PRIMARY_LIGHT, BLOCK_GRAY, COLOR_BLUE, COLOR_GREEN, COLOR_ORANGE, COLOR_ICON_TEXT, COLOR_LIGHT_GREEN, COLOR_HEIGHT_GREEN } from "./constant";
+import { COLOR_LIGHT, COLOR_INFO, COLOR_BLACK, COLOR_SUCCESS, COLOR_DANGER, COLOR_PRIMARY, BG_GRAY, COLOR_WHITE, COLOR_SAFE, COLOR_PRIMARY_SUB, COLOR_WARNING, COLOR_SUB, COLOR_PLACEHOLDER, COLOR_PRIMARY_LIGHT, BLOCK_GRAY, COLOR_BLUE, COLOR_GREEN, COLOR_ORANGE, COLOR_ICON_TEXT, COLOR_LIGHT_GREEN, COLOR_HEIGHT_GREEN, COLOR_PALE } from "./constant";
 
 export const bgPrimary = getBgColor(COLOR_PRIMARY)//主题色
 export const bgPrimarySub = getBgColor(COLOR_PRIMARY_SUB)//主题色
@@ -19,6 +19,7 @@ export const bgInfoLight = getBgColor(COLOR_LIGHT)//浅灰色
 export const bgBlack = getBgColor(COLOR_BLACK)//黑色
 export const bgGray = getBgColor(BG_GRAY)//背景色
 export const bgBlockGray = getBgColor(BLOCK_GRAY)//块灰色
+export const bgPale = getBgColor(COLOR_PALE)//灰白色
 
 export const colorPrimary = getColor(COLOR_PRIMARY)//主题色
 export const colorPlaceholder = getColor(COLOR_PLACEHOLDER)//白色
