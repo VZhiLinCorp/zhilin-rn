@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, ListItem, Left, Thumbnail, Body, Icon, Input } from 'native-base'
 import { row, spaceBtw, fontSizeN, pp_sm, getBorder, getFlex, ml_sm, mt_sm, fontSizeSm, alignItemsC, getRadius, getHeight, ml_xs, getWidth, center, mb_sm, pp_xs, colorBlack } from 'zhilin-rn/styles';
-import { bgWhite, colorInfoLight, bgSafe, bgGray, colorPrimary, bgPrimaryLight, bgBlockGray, colorInfo } from 'zhilin-rn/styles';
+import { bgWhite, colorInfoLight, bgSafe, bgGray, colorPrimary, bgPrimaryLight, bgBlockGray, colorInfo, mp_xs } from 'zhilin-rn/styles';
 
 import BottomBlock from '../BottomBlock';
 import Touch from '../Touch';
@@ -74,7 +74,7 @@ export default class Query extends React.PureComponent {
                     </View>
                 ) : (
                     showBtn && <Touch onPress={toggleQueryShow} style={[row, getHeight(40), { backgroundColor: '#F7F7F7' }, alignItemsC, pp_sm, getBorder('b')]}>
-                        <QueryIcon style={[colorInfoLight]} />
+                        <QueryIcon style={[colorInfoLight, mp_xs]} />
                         <Text numberOfLines={1} style={[fontSizeN, colorBlack, ml_xs]}>{textFn()}</Text>
                     </Touch>
                 )
