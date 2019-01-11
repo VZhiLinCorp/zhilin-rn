@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { bgWhite, fontSizeXs, listItemTitle, getFlex, row, pp_sm, spaceBtw, mt_xs, getBorder, pv_n, colorInfoLight } from '../../../styles';
+import { bgWhite, fontSizeXs, listItemTitle, getFlex, row, pp_sm, spaceBtw, mt_xs, getBorder, pv_n, colorInfoLight, alignItemsC, mr_xs, mt_sm } from '../../../styles';
 import { IconFont } from 'zhilin-rn'
 import { StatusBadge, PaddingBox } from '../index';
 export default class StatusListItem extends React.Component {
@@ -22,7 +22,7 @@ export default class StatusListItem extends React.Component {
                 {
                     bottomRows.map((r,rIndex) => {
                         return (
-                            <View style={[row, spaceBtw, mt_xs]} key={rIndex}>
+                            <View style={[row, spaceBtw, mt_sm]} key={rIndex}>
                                 {
                                     r.map((c,cIndex) => {
                                         return(
