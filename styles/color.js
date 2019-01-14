@@ -1,5 +1,5 @@
 import { getColor, getBgColor } from "./fn";
-import { COLOR_LIGHT, COLOR_INFO, COLOR_BLACK, COLOR_SUCCESS, COLOR_DANGER, COLOR_PRIMARY, BG_GRAY, COLOR_WHITE, COLOR_SAFE, COLOR_PRIMARY_SUB, COLOR_WARNING, COLOR_SUB, COLOR_PLACEHOLDER, COLOR_PRIMARY_LIGHT, BLOCK_GRAY, COLOR_BLUE, COLOR_GREEN, COLOR_ORANGE, COLOR_ICON_TEXT, COLOR_LIGHT_GREEN, COLOR_HEIGHT_GREEN, COLOR_PALE } from "./constant";
+import { COLOR_LIGHT, COLOR_INFO, COLOR_BLACK, COLOR_SUCCESS, COLOR_DANGER, COLOR_PRIMARY, BG_GRAY, COLOR_WHITE, COLOR_SAFE, COLOR_PRIMARY_SUB, COLOR_WARNING, COLOR_SUB, COLOR_PLACEHOLDER, COLOR_PRIMARY_LIGHT, BLOCK_GRAY, COLOR_BLUE, COLOR_GREEN, COLOR_ORANGE, COLOR_ICON_TEXT, COLOR_LIGHT_GREEN, COLOR_HEIGHT_GREEN, COLOR_PALE, COLOR_CIRCLE, COLOR_CIRCLE_BG, COLOR_CIRCLE_ORANGE } from "./constant";
 
 export const bgPrimary = getBgColor(COLOR_PRIMARY)//主题色
 export const bgPrimarySub = getBgColor(COLOR_PRIMARY_SUB)//主题色
@@ -36,6 +36,9 @@ export const colerPlaceHolder = getColor(COLOR_PLACEHOLDER)//
 export const colorIconText = getColor(COLOR_ICON_TEXT)//图标文字颜色
 export const colorLightColor = getColor(COLOR_LIGHT_GREEN)//浅绿
 export const colorHeightColor = getColor(COLOR_HEIGHT_GREEN)//深绿
+export const colorCircle = getColor(COLOR_CIRCLE)//圆环颜色
+export const colorCircleBg = getColor(COLOR_CIRCLE_BG)//圆环底色
+export const colorCircleOrange = getColor(COLOR_CIRCLE_ORANGE)//黄色圆环
 
 const statusColors = {
     '未通过': colorDanger,
