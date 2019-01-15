@@ -20,6 +20,7 @@ export const bgBlack = getBgColor(COLOR_BLACK)//黑色
 export const bgGray = getBgColor(BG_GRAY)//背景色
 export const bgBlockGray = getBgColor(BLOCK_GRAY)//块灰色
 export const bgPale = getBgColor(COLOR_PALE)//灰白色
+export const bgLightGreen = getBgColor(COLOR_CIRCLE)//浅绿
 
 export const colorPrimary = getColor(COLOR_PRIMARY)//主题色
 export const colorPlaceholder = getColor(COLOR_PLACEHOLDER)//白色
