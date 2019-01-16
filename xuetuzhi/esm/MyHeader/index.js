@@ -17,7 +17,7 @@ export default class MyHeader extends React.Component {
         navigation.dispatch(action)
     }
     render() {
-        const { showLeft = true, renderRight, route, leftText, bgColor, color, renderBody, ChevronLeft } = this.props
+        const { showLeft = true, renderRight, route, leftText, bgColor, color, renderBody, ChevronLeft, nb } = this.props
         return (
             <Header style={[{ marginTop: -1, paddingTop: px2dp(24) }, spaceBtw, alignItemsC, nb?'':getBorder('b'), headerHeight, headerPadding, { backgroundColor: bgColor ? bgColor : "#F8F8F8" }]}>
                 <View style={[getFlex(3), row, alignItemsC]}>{
