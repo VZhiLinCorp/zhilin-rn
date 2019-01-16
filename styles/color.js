@@ -74,6 +74,10 @@ const statusBg = {
 
     '已结束': bgSub,
     '已评价': bgSub,
+    
+    '未评分': bgDanger,
+    '处理中': bgWarning,
+    '已处理': bgSafe,
 }
 export const getStupidColor = (str) => {
     str = str || ''

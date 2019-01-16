@@ -23,7 +23,7 @@ export const COLOR_ORANGE = '#FE9141'
 export const COLOR_PALE = '#F3F5F7'
 export const COLOR_CIRCLE_BG= '#E4E4E4'
 export const COLOR_CIRCLE = '#00e0ff'
-export const COLOR_CIRCLE_ORANGE = '#00e0ff'
+export const COLOR_CIRCLE_ORANGE = '#FEB83C'
 
 export const COLOR_LIGHT_GREEN = '#3CDACD'
 export const COLOR_HEIGHT_GREEN = '#1FC1B1'
