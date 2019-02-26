@@ -20,10 +20,10 @@ export default class InfoBlock extends React.Component {
                     {
                         rows.map((r, index) => {
                             return (
-                                <View style={[row, spaceBtw, (index !== 0) && mt_sm]}>
+                                <View style={[row, spaceBtw, (index !== 0) && mt_sm]} key={index}>
                                     {
-                                        r.map(rowItem => {
-                                            return <Text style={_textStyle}>{rowItem}</Text>
+                                        r.map((rowItem,i) => {
+                                            return <Text style={_textStyle} key={i}>{rowItem}</Text>
                                         })
                                     }
                                 </View>

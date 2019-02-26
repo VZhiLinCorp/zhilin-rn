@@ -26,7 +26,7 @@ export default class StatusListItem extends React.Component {
                                 {
                                     r.map((c,cIndex) => {
                                         return(
-                                            <View style={[row, alignItemsC]}>
+                                            <View style={[row, alignItemsC]} key={cIndex}>
                                                 <IconFont name={rIndex<1?'time':'address'} style={[colorInfoLight, fontSizeXs, mr_xs]} />
                                                 <Text style={textStyle} key={cIndex}>{c}</Text>
                                             </View>
