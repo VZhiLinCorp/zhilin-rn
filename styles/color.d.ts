@@ -40,6 +40,7 @@ export const colorHeightColor = getColor(COLOR_HEIGHT_GREEN)//深绿
 export const colorCircle = getColor(COLOR_CIRCLE)//圆环颜色
 export const colorCircleBg = getColor(COLOR_CIRCLE_BG)//圆环底色
 export const colorCircleOrange = getColor(COLOR_CIRCLE_ORANGE)//黄色圆环
+export const colorOrange = getColor(COLOR_ORANGE)//桔色
 
 
 //颜色
