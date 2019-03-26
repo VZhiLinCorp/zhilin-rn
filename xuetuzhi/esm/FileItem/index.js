@@ -70,10 +70,10 @@ export default class FileListItem extends Component {
     }
     render() {
         const { props, download } = this
-        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile } = props
+        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad=true } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, FileId } = file
         const DownloadUrl = file[DOWNLOAD_URL_KEY]
-        const realExtension = DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
+        const realExtension = DownloadUrl&&DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
 
         const fileUserId = FileId + userId
         const target = files[fileUserId]
@@ -114,7 +114,7 @@ export default class FileListItem extends Component {
                     </View>
                     <View style={[row]}>
                         {
-                            DownloadBtn
+                            showDownLoad&&DownloadBtn
                         }
                     </View>
                 </View>
