@@ -15,7 +15,8 @@ export default class SingleSelect extends Component {
         super(...arguments);
         this.state = {
             visibleModal: false,
-            _value: ''
+            _value: '',
+            oldValue:''
         }
 
     }
@@ -42,28 +43,39 @@ export default class SingleSelect extends Component {
     static defaultProps = {
         onPress: () => { },
         valueName: 'value',
-        labelName: 'label'
+        labelName: 'label',
+        cancelable:true
     }
 
     //选择确定事件
     _handleSetChoose(ok) {
         const { setState, state, props } = this
         const { data, onPress, valueName, labelName, } = props
-        const { _value, visibleModal } = state
+        const { _value,oldValue, visibleModal } = state
 
         return () => {
 
             if (ok) {
                 onPress(_value)
+                this.setState({
+                    oldValue: _value
+                })
             }
             this.setState({
                 visibleModal: !visibleModal,
+                _value:oldValue
             })
         }
 
     }
-    setValue(_value) {
-        this.setState({ _value })
+    setValue(_value,oldValue, checked) {
+        if (this.props.cancelable) {
+            this.setState({ _value: (checked ? null : _value),oldValue })
+        } else {
+            if (!checked) {
+                this.setState({ _value,oldValue })
+            }
+        }
     }
     render() {
         const { setValue, state, _handleSetChoose, props } = this
@@ -121,7 +133,7 @@ export default class SingleSelect extends Component {
                                     data.map(item => {
                                         const itemValue = item[valueName]
                                         let checked = itemValue == _value
-                                        return <Touch style={[bgWhite, getHeight(HEIGHT), row, alignItemsC]} key={item[valueName]} onPress={() => setValue(checked ? null : itemValue)} >
+                                        return <Touch style={[bgWhite, getHeight(HEIGHT), row, alignItemsC]} key={item[valueName]} onPress={() => setValue(itemValue,_value,checked)} >
                                             <View style={{ justifyContent: 'center', paddingRight: 12, paddingLeft: 12 }}  >
                                                 <CheckBox checked={checked} />
                                             </View>
