@@ -26,7 +26,7 @@
     "hex-to-rgba": "^1.0.2",
     "hoist-non-react-statics": "^3.2.0",
     "lodash": "^4.17.11",
-    "native-base": "^2.8.1",
+    "native-base": "2.12.1",
     "prop-types": "^15.6.2",
     "react-native-calendars": "^1.21.0",
     "react-native-datepicker": "^1.7.2",
