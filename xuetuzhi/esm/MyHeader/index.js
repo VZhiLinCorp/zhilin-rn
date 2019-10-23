@@ -19,7 +19,7 @@ export default class MyHeader extends React.Component {
     render() {
         const { showLeft = true, renderRight, route, leftText, bgColor, color, renderBody, ChevronLeft, nb } = this.props
         return (
-            <Header style={[{ marginTop: -1, paddingTop: px2dp(24) }, spaceBtw, alignItemsC, nb?'':getBorder('b'), headerHeight, headerPadding, { backgroundColor: bgColor ? bgColor : "#F8F8F8" }]}>
+           <Header style={[{ marginTop: -1, paddingTop: px2dp(24) }, spaceBtw, alignItemsC, nb ? { borderBottomWidth: 0 } : getBorder('b'), headerHeight, headerPadding, { backgroundColor: bgColor ? bgColor : "#F8F8F8" }]}>
                 <View style={[getFlex(3), row, alignItemsC]}>{
                     (route || showLeft) &&
                     <Button transparent style={[getFlex(1), { marginLeft: isAndroid ? px2dp(-5) : 0, paddingLeft: 0 }]} onPress={this._nav} dark>
