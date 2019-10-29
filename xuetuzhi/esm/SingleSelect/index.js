@@ -80,7 +80,7 @@ export default class SingleSelect extends Component {
     render() {
         const { setValue, state, _handleSetChoose, props } = this
         const { _value } = state
-        const { left, iconColor, placeholderColor, selectedColor, data, valueName, labelName, value } = props
+        const { left, iconColor, placeholderColor, selectedColor, data, valueName, labelName, value, dir } = props
         _iconColor = { color: iconColor ? iconColor : COLOR_LIGHT }
         _placeholderColor = { color: placeholderColor ? placeholderColor : COLOR_PLACEHOLDER }
         _selectedColor = { color: selectedColor ? selectedColor : COLOR_BLACK }
@@ -98,7 +98,7 @@ export default class SingleSelect extends Component {
                     <Text style={[_selectedColor, fontSizeN, { flexShrink: 1 },jc_c]} numberOfLines={1}>{target[labelName] || '请选择'}</Text>
                     <Text>
                         {
-                            (!left) && <Chevron dir="right" />
+                            (!left) && <Chevron dir={dir} />
                         }
                     </Text>
                 </Touch>
