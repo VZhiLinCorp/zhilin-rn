@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
-import { fontSizeN, getFlex, row, getBorder, fontSizeXs, alignItemsC, mp_xs, ml_xs, p_xs, COLOR_PRIMARY, COLOR_LIGHT, fontSizeSm, bgWhite } from "../../../styles";
+import { fontSizeN, getFlex, row, getBorder, fontSizeXs, spaceBtw, alignItemsC, mp_xs, pt_xs, ml_xs, p_xs, COLOR_PRIMARY, COLOR_LIGHT, fontSizeSm, bgWhite } from "../../../styles";
 import { colorInfoLight } from "../../../styles";
 import { Touch, ProgressCircle, PaddingBox } from "../index";
 import { autobind } from "zhilin-rn/utils";
@@ -70,7 +70,7 @@ export default class FileListItem extends Component {
     }
     render() {
         const { props, download } = this
-        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad=true } = props
+        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad = true, checkStudents } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, FileId } = file
         const DownloadUrl = file[DOWNLOAD_URL_KEY]
         const realExtension = DownloadUrl&&DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
@@ -78,7 +78,7 @@ export default class FileListItem extends Component {
         const fileUserId = FileId + userId
         const target = files[fileUserId]
         let progress = 0
-        let DownloadBtn = this.renderInitialIcon(progress, download(fileUserId, file, DownloadUrl, realExtension, myDownload, updateFile))
+        let DownloadBtn = this.renderInitialIcon(progress, download(fileUserId, file, DownloadUrl, realExtension, myDownload, updateFile, FileId))
         let openUrl = DownloadUrl
         //文件存在
         if (target && (target.userId === userId)) {
@@ -94,7 +94,7 @@ export default class FileListItem extends Component {
             }
         }
         const onPress = () => {
-            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, fileName: FileNameWithoutExt } })
+            navigation.navigate({ routeName, params: { type: realExtension, path: openUrl, fileName: FileNameWithoutExt, FileId: FileId, checkStudents: checkStudents } })
         }
 
 
@@ -107,10 +107,17 @@ export default class FileListItem extends Component {
                     <FileIcon type={FileExtension} />
                     <View style={[getFlex(1), mp_xs]}>
                         <Text style={[fontSizeN]} numberOfLines={1}>{FileNameWithoutExt}</Text>
-                        <View style={[row, alignItemsC]}>
-                            <Icon name="database" style={[fontSizeSm, colorInfoLight]} />
-                            <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>{FileSizeString}</Text>
-                        </View>
+                        {
+                            file.ViewCount>=0 || file.ViewCount>=0 ?
+                                <View style={[row, spaceBtw, pt_xs]}>
+                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看时长:{file.ViewCount}分钟</Text>
+                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看次数:{file.ViewDuration}次</Text>
+                                </View> :
+                                <View style={[row, alignItemsC]}>
+                                    <Icon name="database" style={[fontSizeSm, colorInfoLight]} />
+                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>{FileSizeString}</Text>
+                                </View>
+                        }
                     </View>
                     <View style={[row]}>
                         {
