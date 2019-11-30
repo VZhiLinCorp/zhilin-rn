@@ -12,7 +12,7 @@ export function pickImage(cb, options = {}) {
             skipBackup: true,
             path: 'images'
         },
-        quality: 0.4,
+        quality: 0.99,
         ...options
     }
     ImagePicker.showImagePicker(_options, (response) => {
