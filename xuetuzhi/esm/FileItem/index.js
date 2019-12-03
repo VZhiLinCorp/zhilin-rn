@@ -110,8 +110,8 @@ export default class FileListItem extends Component {
                         {
                             file.ViewCount>=0 || file.ViewCount>=0 ?
                                 <View style={[row, spaceBtw, pt_xs]}>
-                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看时长:{file.ViewCount}分钟</Text>
-                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看次数:{file.ViewDuration}次</Text>
+                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看时长:{file.ViewDuration}分钟</Text>
+                                    <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看次数:{file.ViewCount}次</Text>
                                 </View> :
                                 <View style={[row, alignItemsC]}>
                                     <Icon name="database" style={[fontSizeSm, colorInfoLight]} />
