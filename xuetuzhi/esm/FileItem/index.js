@@ -104,7 +104,7 @@ export default class FileListItem extends Component {
         return (
             <PaddingBox onPress={onPress} style={[getBorder('b'), bgWhite]}>
                 <View style={[row, getFlex(1), alignItemsC]} >
-                    <FileIcon type={FileExtension} />
+                    <FileIcon type={FileExtension && FileExtension.toLowerCase()} />
                     <View style={[getFlex(1), mp_xs]}>
                         <Text style={[fontSizeN]} numberOfLines={1}>{FileNameWithoutExt}</Text>
                         {
