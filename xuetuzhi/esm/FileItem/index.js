@@ -70,7 +70,7 @@ export default class FileListItem extends Component {
     }
     render() {
         const { props, download } = this
-        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad = true, checkStudents } = props
+        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad = true, checkStudents, onDelete, index  } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, FileId } = file
         const DownloadUrl = file[DOWNLOAD_URL_KEY]
         const realExtension = DownloadUrl&&DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
@@ -122,6 +122,11 @@ export default class FileListItem extends Component {
                     <View style={[row]}>
                         {
                             showDownLoad&&DownloadBtn
+                        }
+                        {
+                            onDelete && <Touch onPress={() => onDelete(index)}>
+                                <Icon name='x' color={COLOR_LIGHT} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
+                            </Touch>
                         }
                     </View>
                 </View>
