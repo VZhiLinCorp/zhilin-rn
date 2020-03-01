@@ -70,7 +70,7 @@ export default class FileListItem extends Component {
     }
     render() {
         const { props, download } = this
-        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad = true, checkStudents, onDelete, index  } = props
+        const { routeName, file, FileIcon, userId, files, navigation, updateFile, downloadTasks, myDownload, removeFile, showDownLoad = true, checkStudents, onDelete, index,showViewLog=false  } = props
         const { FileExtension, FileNameWithoutExt, FileSizeString, FileId } = file
         const DownloadUrl = file[DOWNLOAD_URL_KEY]
         const realExtension = DownloadUrl&&DownloadUrl.slice(DownloadUrl.lastIndexOf('.') + 1)
@@ -108,7 +108,7 @@ export default class FileListItem extends Component {
                     <View style={[getFlex(1), mp_xs]}>
                         <Text style={[fontSizeN]} numberOfLines={1}>{FileNameWithoutExt}</Text>
                         {
-                            file.ViewCount>=0 || file.ViewCount>=0 ?
+                            showViewLog ?
                                 <View style={[row, spaceBtw, pt_xs]}>
                                     <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看时长:{file.ViewDuration}分钟</Text>
                                     <Text style={[ml_xs, fontSizeXs, colorInfoLight]} numberOfLines={1}>查看次数:{file.ViewCount}次</Text>
@@ -124,7 +124,7 @@ export default class FileListItem extends Component {
                             showDownLoad&&DownloadBtn
                         }
                         {
-                            onDelete && <Touch onPress={() => onDelete(index)}>
+                            onDelete && (typeof onDelete === "function") && <Touch onPress={onDelete}>
                                 <Icon name='x' color={COLOR_LIGHT} size={16} style={{ marginTop: -1, marginLeft: -1 }} />
                             </Touch>
                         }
