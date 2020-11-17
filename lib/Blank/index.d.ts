@@ -1,10 +1,11 @@
-import { DatePickerProps } from 'react-native-datepicker'
 import react from 'react'
 
-
 interface Props {
-    text: boolean;
-    style: array;
+    text: string;
+    showImage: boolean,
+    textStyle: array,
+    style: array,
+    renderImage:Function
 }
 
 declare class Blank extends react.Component<Props> {
