@@ -5,7 +5,8 @@ interface Props {
     showImage: boolean,
     textStyle: array,
     style: array,
-    renderImage:Function
+    renderImage:Function,
+    onPress:Function
 }
 
 declare class Blank extends react.Component<Props> {
