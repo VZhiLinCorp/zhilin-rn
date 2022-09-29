@@ -37,7 +37,7 @@
     "react-native-vector-icons": "6.1.0",
     "react-redux": "^6.0.0",
     "shelljs": "^0.8.3",
-    "victory-native": "^31.0.0"
+    "victory-native": "^36.6.8"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
